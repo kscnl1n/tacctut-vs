@@ -6,7 +6,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = $(if $(READTHEDOCS_OUTPUT),$(READTHEDOCS_OUTPUT),_build)
+BUILDDIR 	  = $(if $(READTHEDOCS_OUTPUT),$(READTHEDOCS_OUTPUT),_build)
 
 # Put it first so that "make" without argument is like "make help".
 help:
