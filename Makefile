@@ -1,31 +1,30 @@
-# Minimal makefile for Sphinx documentation
-#
-
-# You can set these variables from the command line, and also
-# from the environment for the first two.
+# Set these variables as needed.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR 	  = $(if $(READTHEDOCS_OUTPUT),$(READTHEDOCS_OUTPUT),_build)
+BUILDDIR      = $(if $(READTHEDOCS_OUTPUT),$(READTHEDOCS_OUTPUT)/html,_build/html)
 
-# Put it first so that "make" without argument is like "make help".
+# This is the default target when running "make"
+.PHONY: help clean html cleanhtml
+
+# Print out available options and Sphinx help
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-.PHONY: help Makefile
+	@echo "Please use one of the following commands:"
+	@echo "  make clean       Clean up build directory"
+	@echo "  make html        Build HTML documentation"
+	@echo "  make cleanhtml   Clean and then build HTML"
 
 # Build HTML
 html:
-	$(SPHINXBUILD) -b html $(SOURCEDIR) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html $(SOURCEDIR) $(BUILDDIR)
 
 # Clean build directory
 clean:
-	rm -rf $(BUILDDIR)/html $(BUILDDIR)/doctrees
+	rm -rf $(BUILDDIR)/doctrees $(BUILDDIR)
 
 # Clean and Build HTML (custom target)
 cleanhtml: clean html
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+# Catch-all target to route all unknown targets to Sphinx
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
