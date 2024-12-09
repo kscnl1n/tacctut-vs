@@ -2,7 +2,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = $(if $(READTHEDOCS_OUTPUT),$(READTHEDOCS_OUTPUT)/html,_build/html)
+BUILDDIR      =  READTHEDOCS_OUTPUT
 
 # This is the default target when running "make"
 .PHONY: help clean html cleanhtml

@@ -8,8 +8,8 @@
 import sphinx_rtd_theme
 import os
 
-project = 'TACC Tutorial'
-copyright = '2024, Alexis Phan'
+project = 'AI/ML TACC Introduction'
+copyright = '2024, Texas Advanced Computing Center'
 author = 'Alexis Phan'
 release = '1.0'
 
