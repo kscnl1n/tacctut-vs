@@ -3,6 +3,6 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "AI/ML TACC Introduction"
+name = "ai-ml-tacc-introduction"  # Replace '/' with '-'
 authors = [{name = "Alexis Phan", email = "alexisphan@utexas.edu"}]
 dynamic = ["version", "description"]
