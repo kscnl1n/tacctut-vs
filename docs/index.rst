@@ -27,7 +27,7 @@ Objectives :
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Content:
 
    Tools
