@@ -7,7 +7,6 @@ Prerequisites
 -------------
 Before you begin, ensure that you have the following:
 - A system running Windows, macOS, or Linux.
-- Administrative privileges on your system (for installation).
 - A working internet connection to download Conda.
 
 Miniconda or Anaconda?
