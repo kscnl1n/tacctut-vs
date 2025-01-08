@@ -22,14 +22,14 @@ Connecting to TACC
 **Step 2: Run the SSH Command**  
 Use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
 
-.. code-block:: bash
+:: 
 
     ssh <username>@<hostname>
 
 **Example:**
 To connect to the Frontera system:
 
-.. code-block:: bash
+::
 
     ssh username@frontera.tacc.utexas.edu
 
