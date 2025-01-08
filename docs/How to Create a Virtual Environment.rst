@@ -18,14 +18,12 @@ Steps to Create a Virtual Environment
    Execute the appropriate command based on your operating system:
 
    - **On Windows**:
-     .. code-block:: bash
-
-        python -m venv myenv
+        .. code-block:: bash
+         -m venv myenv
 
    - **On macOS/Linux**:
-     .. code-block:: bash
-
-        python3 -m venv myenv
+      .. code-block:: bash
+         -m venv myenv
 
    Replace `myenv` with the name of your virtual environment directory.
 
@@ -35,11 +33,11 @@ Steps to Create a Virtual Environment
 Understanding the Structure
 ---------------------------
 The virtual environment directory contains:
-- **`bin` or `Scripts`**: Contains the executables, including the Python interpreter.
-- **`lib`**: Includes the standard library and site packages for your virtual environment.
-- **`pyvenv.cfg`**: Configuration file for the virtual environment.
+   - **`bin` or `Scripts`**: Contains the executables, including the Python interpreter.
+   - **`lib`**: Includes the standard library and site packages for your virtual environment.
+   - **`pyvenv.cfg`**: Configuration file for the virtual environment.
 
 Next Steps
 ----------
-Once created, you can activate the virtual environment. Refer to the guide on **fill this in with link**
+Once created, you can activate the virtual environment. Refer to the guide on **fill this in with the link to the other guide you made pls**
 
