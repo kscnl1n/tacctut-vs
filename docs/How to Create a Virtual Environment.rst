@@ -15,20 +15,8 @@ Steps to Create a Virtual Environment
 1. **Open a Terminal or Command Prompt**
    Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
 
-2. **Run the Command**
-   Execute the appropriate command based on your operating system:
-
-   - **On Windows**:
-      ::
-
-         -m venv myenv
-
-   - **On macOS/Linux**:
-      ::
-
-         -m venv myenv
-
-   Replace `myenv` with the name of your virtual environment directory.
+2. **Create a Directory**
+   You need to create a project directory that you will activate the virtual environment for
 
 3. **Verify the Creation**
    After running the command, a new directory (e.g., `myenv`) will be created in your current location. This directory contains the files needed for the virtual environment.
