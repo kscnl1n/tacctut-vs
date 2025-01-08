@@ -6,20 +6,20 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Activate a Virtual Environment &mdash; AI/ML TACC Introduction 1.0 documentation</title>
+  <title>How to Activate a Virtual Environment &mdash; AI/ML TACC Introduction  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="How to Install Conda" href="How%20to%20Install%20Conda.html" /> 
+    <link rel="prev" title="How to Create a Virtual Environment" href="How%20to%20Create%20a%20Virtual%20Environment.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,7 +46,18 @@
 <li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Activate a Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How%20to%20Create%20a%20Virtual%20Environment.html">How to Create a Virtual Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Activate a Virtual Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-a-virtual-environment">Steps to Activate a Virtual Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-windows"><strong>On Windows</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-macos-linux"><strong>On macOS/Linux</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deactivating-a-virtual-environment">Deactivating a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -75,13 +86,99 @@
              
   <section id="how-to-activate-a-virtual-environment">
 <h1>How to Activate a Virtual Environment<a class="headerlink" href="#how-to-activate-a-virtual-environment" title="Link to this heading"></a></h1>
+<p>Virtual environments are an essential tool in Python development, allowing you to isolate project dependencies and avoid conflicts between different projects. This guide will walk you through the steps to activate a virtual environment on various operating systems.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>Before activating a virtual environment, ensure you have the following:
+- Python installed on your system.
+- A virtual environment created using <cite>venv</cite>.</p>
+</section>
+<section id="steps-to-activate-a-virtual-environment">
+<h2>Steps to Activate a Virtual Environment<a class="headerlink" href="#steps-to-activate-a-virtual-environment" title="Link to this heading"></a></h2>
+<section id="on-windows">
+<h3><strong>On Windows</strong><a class="headerlink" href="#on-windows" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Open Command Prompt (<cite>cmd.exe</cite>) or PowerShell.</p></li>
+<li><p>Navigate to the directory containing your virtual environment using <cite>cd</cite>.</p></li>
+<li><p>Run the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">environment</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Activate the environment with:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>\<span class="n">env</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Replace <cite>env</cite> with the name of your virtual environment. For example in our previous tutorial, <cite>myemv</cite></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">YourUserName</span>\<span class="n">YourProject</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="on-macos-linux">
+<h3><strong>On macOS/Linux</strong><a class="headerlink" href="#on-macos-linux" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Open a terminal.</p></li>
+<li><p>Navigate to the directory containing your virtual environment.</p></li>
+<li><p>Run the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">environment</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Activate the environment with:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Replace <cite>env</cite> with the name of your virtual environment. For example in our previous tutorial, <cite>myemv</cite></p>
+<ol class="arabic" start="5">
+<li><p>Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(myenv) user@hostname:~/YourProject$
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="deactivating-a-virtual-environment">
+<h2>Deactivating a Virtual Environment<a class="headerlink" href="#deactivating-a-virtual-environment" title="Link to this heading"></a></h2>
+<p>When you’re done working in your virtual environment, you can deactivate it to return to the global Python environment:</p>
+<ol class="arabic simple">
+<li><p>Simply run the following command in your terminal (works on all operating systems):</p></li>
+</ol>
+<p>deactivate</p>
+<ol class="arabic simple" start="2">
+<li><p>You’ll notice the environment name disappears from your command line, confirming the environment has been deactivated.</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>If the <cite>activate</cite> command is not recognized, ensure you’re in the correct directory where the virtual environment was created.</p></li>
+</ul>
+<p>Congratulations! You now know how to activate and deactivate a virtual environment to keep your Python projects organized and conflict-free.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="How%20to%20Install%20Conda.html" class="btn btn-neutral float-left" title="How to Install Conda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How%20to%20Create%20a%20Virtual%20Environment.html" class="btn btn-neutral float-left" title="How to Create a Virtual Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

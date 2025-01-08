@@ -24,6 +24,7 @@ Containers vs Virtual Environments
    :width: 500px
    :align: center
 
+
 .. image:: https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_container.png
    :alt: Applications isolated by containers.
    :width: 500px

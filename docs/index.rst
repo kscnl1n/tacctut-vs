@@ -22,14 +22,16 @@ Objectives :
 ------------
 * **Educate** users about the pros and cons of different tools: virtual environments, Conda, and containers.
 * **Optimize** AI/ML workflows by leveraging TACC’s high-performance hardware like GPUs, ensuring efficient use of resources.
-
 * **Provide** actionable instructions for building these environments with a focus on ease of use and compatibility with TACC machines
+
+
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Content:
 
+   Before We Start
    Tools
    How Are They Different
    How to Install Conda

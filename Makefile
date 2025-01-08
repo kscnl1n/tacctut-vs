@@ -1,7 +1,7 @@
 # Set these variables as needed.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = .
+SOURCEDIR     = docs
 BUILDDIR      = READTHEDOCS_OUTPUT
 
 # This is the default target when running "make"

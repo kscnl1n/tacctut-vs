@@ -18,19 +18,19 @@ Steps to Activate a Virtual Environment
 2. Navigate to the directory containing your virtual environment using `cd`.
 3. Run the following command:
 
-    .. note::
+    ::
             
         cd /path/to/your/environment
 
 4. Activate the environment with:
 
-    .. note::
+    ::
 
         .\env\Scripts\activate
 
 Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
 
-    .. note::
+    ::
         
         (myenv) C:\Users\YourUserName\YourProject
 
@@ -41,13 +41,13 @@ Replace `env` with the name of your virtual environment. For example in our prev
 2. Navigate to the directory containing your virtual environment.
 3. Run the following command:
 
-    .. note::
+    ::
         
-    cd /path/to/your/environment
+        cd /path/to/your/environment
 
 4. Activate the environment with:
 
-    .. note::
+    ::
 
         source env/bin/activate
 
@@ -55,7 +55,7 @@ Replace `env` with the name of your virtual environment. For example in our prev
 
 5. Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:
 
-    .. note::
+    ::
 
         (myenv) user@hostname:~/YourProject$
 
