@@ -6,8 +6,8 @@ Conda is a powerful package manager and environment management tool, widely used
 Prerequisites
 -------------
 Before you begin, ensure that you have the following:
-- A system running Windows, macOS, or Linux.
-- A working internet connection to download Conda.
+    - A system running Windows, macOS, or Linux.
+    - A working internet connection to download Conda.
 
 Miniconda or Anaconda?
 ----------------------

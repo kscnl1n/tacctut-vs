@@ -1,32 +1,32 @@
 How to Activate a Virtual Environment
 =====================================
 
-Virtual environments are an essential tool in Python development, allowing you to isolate project dependencies and avoid conflicts between different projects. This guide will walk you through the steps to activate a virtual environment on various operating systems.
+Virtual environments are an essential tool in Python development, allowing you to isolate project dependencies and avoid conflicts between different projects. This guide will walk you through the steps to activate a virtual environment.
 
 Prerequisites
 -------------
 Before activating a virtual environment, ensure you have the following:
-- Python installed on your system.
-- A virtual environment created using `venv`.
+    - Python installed on your system.
+    - A virtual environment created using `venv`.
+    - SSH onto a TACC machine
 
 Steps to Activate a Virtual Environment
 ---------------------------------------
 
 **On Windows**
 ^^^^^^^^^^^^^^
-1. Open Command Prompt (`cmd.exe`) or PowerShell.
-2. Navigate to the directory containing your virtual environment using `cd`.
-3. Run the following command:
+1. Navigate to the directory containing your virtual environment using `cd`.
+2. Run the following command:
 
     ::
             
         cd /path/to/your/environment
 
-4. Activate the environment with:
+3. Activate the environment with:
 
     ::
 
-        .\env\Scripts\activate
+        source /path/to/virtual-env/bin/activate
 
 Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
 
@@ -37,23 +37,20 @@ Replace `env` with the name of your virtual environment. For example in our prev
 
 **On macOS/Linux**
 ^^^^^^^^^^^^^^^^^^
-1. Open a terminal.
-2. Navigate to the directory containing your virtual environment.
-3. Run the following command:
-
+1. Navigate to the directory containing your virtual environment.
     ::
         
         cd /path/to/your/environment
 
-4. Activate the environment with:
+2. Activate the environment with:
 
     ::
 
-        source env/bin/activate
+        source /path/to/virtual-env/bin/activate
 
 Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
 
-5. Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:
+3. Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:
 
     ::
 

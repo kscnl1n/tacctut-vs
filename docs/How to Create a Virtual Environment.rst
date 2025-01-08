@@ -5,14 +5,15 @@ Virtual environments are essential for isolating project dependencies and ensuri
 
 Prerequisites
 -------------
-- Python 3.3 or newer installed on your system.
-- A terminal or command prompt to execute commands.
+   - Python 3.3 or newer installed on your system.
+   - A terminal or command prompt to execute commands.
+   - SSH onto a TACC machine
 
 Steps to Create a Virtual Environment
 -------------------------------------
 
 1. **Open a Terminal or Command Prompt**
-   Open the terminal (or Command Prompt on Windows) and navigate to the directory where you want to create the virtual environment.
+   Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
 
 2. **Run the Command**
    Execute the appropriate command based on your operating system:
