@@ -18,15 +18,21 @@ Steps to Activate a Virtual Environment
 2. Navigate to the directory containing your virtual environment using `cd`.
 3. Run the following command:
 
-.. code-block::cd /path/to/your/environment
+    .. note::
+            
+        cd /path/to/your/environment
 
 4. Activate the environment with:
 
-.. code-block::.\env\Scripts\activate
+    .. note::
+
+        .\env\Scripts\activate
 
 Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
 
-.. code-block::(myenv) C:\Users\YourUserName\YourProject>
+    .. note::
+        
+        (myenv) C:\Users\YourUserName\YourProject
 
 
 **On macOS/Linux**
@@ -43,7 +49,7 @@ Replace `env` with the name of your virtual environment. For example in our prev
 
     .. note::
 
-    source env/bin/activate
+        source env/bin/activate
 
 Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
 
@@ -51,7 +57,7 @@ Replace `env` with the name of your virtual environment. For example in our prev
 
     .. note::
 
-    (myenv) user@hostname:~/YourProject$
+        (myenv) user@hostname:~/YourProject$
 
 
 Deactivating a Virtual Environment

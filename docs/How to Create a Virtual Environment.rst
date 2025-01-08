@@ -20,12 +20,12 @@ Steps to Create a Virtual Environment
    - **On Windows**:
       .. note::
 
-      -m venv myenv
+         -m venv myenv
 
    - **On macOS/Linux**:
       .. note::
 
-      -m venv myenv
+         -m venv myenv
 
    Replace `myenv` with the name of your virtual environment directory.
 
