@@ -41,5 +41,5 @@ The virtual environment directory contains:
 
 Next Steps
 ----------
-Once created, you can activate the virtual environment. Refer to the guide on :doc:`How to Activate a Virtual Environment <how_to_activate_virtual_environment>`.
+Once created, you can activate the virtual environment. Refer to the guide on **fill this in with link**
 
