@@ -35,17 +35,23 @@ Replace `env` with the name of your virtual environment. For example in our prev
 2. Navigate to the directory containing your virtual environment.
 3. Run the following command:
 
-.. code-block::cd /path/to/your/environment
+    .. note::
+        
+    cd /path/to/your/environment
 
 4. Activate the environment with:
 
-.. code-block::source env/bin/activate
+    .. note::
+
+    source env/bin/activate
 
 Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
 
 5. Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:
 
-.. code-block::(myenv) user@hostname:~/YourProject$
+    .. note::
+
+    (myenv) user@hostname:~/YourProject$
 
 
 Deactivating a Virtual Environment

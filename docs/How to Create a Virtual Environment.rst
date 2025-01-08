@@ -18,12 +18,14 @@ Steps to Create a Virtual Environment
    Execute the appropriate command based on your operating system:
 
    - **On Windows**:
-        .. code-block:: bash
-         -m venv myenv
+      .. note::
+
+      -m venv myenv
 
    - **On macOS/Linux**:
-      .. code-block:: bash
-         -m venv myenv
+      .. note::
+
+      -m venv myenv
 
    Replace `myenv` with the name of your virtual environment directory.
 
