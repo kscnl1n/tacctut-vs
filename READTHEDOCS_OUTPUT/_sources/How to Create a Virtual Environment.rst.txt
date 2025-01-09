@@ -7,28 +7,19 @@ Prerequisites
 -------------
    - Python 3.3 or newer installed on your system.
    - A terminal or command prompt to execute commands.
-   - SSH onto a TACC machine
 
 Steps to Create a Virtual Environment
 -------------------------------------
+First, ensure you are SSH-ed into a TACC machine and in the proper directory.
 
 1. **Open a Terminal or Command Prompt**
    Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
 
-2. **Run the Command**
-   Execute the appropriate command based on your operating system:
+2. **Create a Directory**
+   Create a project directory that you will be using the virtual environment for
 
-   - **On Windows**:
-      ::
-
-         -m venv myenv
-
-   - **On macOS/Linux**:
-      ::
-
-         -m venv myenv
-
-   Replace `myenv` with the name of your virtual environment directory.
+   ::
+         mkdir my_vir_env
 
 3. **Verify the Creation**
    After running the command, a new directory (e.g., `myenv`) will be created in your current location. This directory contains the files needed for the virtual environment.

@@ -1,8 +1,7 @@
 Before We Start
 ===============
 
-All these tutorials will be configured to work specifically on TACC systems so before we proceed, here is a quick tutorial on how to access TACC's systems and work on them.
-
+All these tutorials will be configured to work specifically on TACC systems so before we proceed, here is a quick tutorial on how to access and work on TACC's systems.
 
 Prerequisites
 -------------
@@ -11,25 +10,25 @@ Prerequisites
 
 2. **SSH Client**  
     - **Linux/macOS**: Use the built-in terminal.  
-    - **Windows**: Use Windows Terminal with OpenSSH.
+    - **Windows**: Use Windows Terminal.
 
 Connecting to TACC
 ------------------
 **Step 1: Open Your Terminal**  
-   - On Linux/macOS, open the default terminal.  
+   - On Linux/macOS, open the built-in terminal.  
    - On Windows, open your Windows Terminal.
 
 **Step 2: Run the SSH Command**  
 Use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
 
-.. code-block:: bash
+:: 
 
     ssh <username>@<hostname>
 
 **Example:**
 To connect to the Frontera system:
 
-.. code-block:: bash
+::
 
     ssh username@frontera.tacc.utexas.edu
 

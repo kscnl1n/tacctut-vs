@@ -19,6 +19,7 @@ First, ensure you are SSH-ed into a TACC machine and in the proper directory.
    Create a project directory that you will be using the virtual environment for
 
    ::
+        
          mkdir my_vir_env
 
 3. **Verify the Creation**

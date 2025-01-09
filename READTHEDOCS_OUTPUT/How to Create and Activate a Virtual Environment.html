@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Activate a Virtual Environment &mdash; AI/ML TACC Introduction  documentation</title>
+  <title>How to Create and Activate a Virtual Environment &mdash; AI/ML TACC Introduction  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -48,8 +48,11 @@
 <li class="toctree-l1"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How%20to%20Create%20a%20Virtual%20Environment.html">How to Create a Virtual Environment</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Activate a Virtual Environment</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Create and Activate a Virtual Environment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-create-a-virtual-environment">Steps to Create a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-structure">Understanding the Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-a-virtual-environment">Steps to Activate a Virtual Environment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#on-windows"><strong>On Windows</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#on-macos-linux"><strong>On macOS/Linux</strong></a></li>
@@ -75,9 +78,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">How to Activate a Virtual Environment</li>
+      <li class="breadcrumb-item active">How to Create and Activate a Virtual Environment</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/How to Activate a Virtual Environment.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/How to Create and Activate a Virtual Environment.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,22 +88,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="how-to-activate-a-virtual-environment">
-<h1>How to Activate a Virtual Environment<a class="headerlink" href="#how-to-activate-a-virtual-environment" title="Link to this heading"></a></h1>
-<p>Virtual environments are an essential tool in Python development, allowing you to isolate project dependencies and avoid conflicts between different projects. This guide will walk you through the steps to activate a virtual environment.</p>
+  <section id="how-to-create-and-activate-a-virtual-environment">
+<h1>How to Create and Activate a Virtual Environment<a class="headerlink" href="#how-to-create-and-activate-a-virtual-environment" title="Link to this heading"></a></h1>
+<p>Virtual environments are essential for isolating project dependencies and ensuring compatibility across different projects. This guide explains how to create a virtual environment using Python’s built-in <cite>venv</cite> module.</p>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3.3 or newer installed on your system. (Usually pre-installed)</p></li>
+<li><p>A terminal or command prompt to execute commands.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="steps-to-create-a-virtual-environment">
+<h2>Steps to Create a Virtual Environment<a class="headerlink" href="#steps-to-create-a-virtual-environment" title="Link to this heading"></a></h2>
+<p>First, ensure you are SSH-ed into a TACC machine and in the proper directory.</p>
+<ol class="arabic">
+<li><p><strong>Open a Terminal or Command Prompt</strong>
+Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.</p></li>
+<li><p><strong>Create a Directory</strong>
+Create a project directory that you will be using the virtual environment for</p>
+<dl class="simple">
+<dt>::</dt><dd><p>mkdir my_vir_env</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>Verify the Creation</strong>
+After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p></li>
+</ol>
+</section>
+<section id="understanding-the-structure">
+<h2>Understanding the Structure<a class="headerlink" href="#understanding-the-structure" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>The virtual environment directory contains:</dt><dd><ul class="simple">
+<li><p><strong>`bin` or `Scripts`</strong>: Contains the executables, including the Python interpreter.</p></li>
+<li><p><strong>`lib`</strong>: Includes the standard library and site packages for your virtual environment.</p></li>
+<li><p><strong>`pyvenv.cfg`</strong>: Configuration file for the virtual environment.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Virtual environments are an essential tool in Python development, allowing you to isolate project dependencies and avoid conflicts between different projects. This guide will walk you through the steps to activate a virtual environment.</p>
+</section>
+<section id="id1">
+<h2>Prerequisites<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <dl class="simple">
 <dt>Before activating a virtual environment, ensure you have the following:</dt><dd><ul class="simple">
 <li><p>Python installed on your system.</p></li>
 <li><p>A virtual environment created using <cite>venv</cite>.</p></li>
-<li><p>SSH onto a TACC machine</p></li>
 </ul>
 </dd>
 </dl>
 </section>
 <section id="steps-to-activate-a-virtual-environment">
 <h2>Steps to Activate a Virtual Environment<a class="headerlink" href="#steps-to-activate-a-virtual-environment" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure you are SSH-ed into a TACC machine and in the proper directory.</p>
+</div>
 <section id="on-windows">
 <h3><strong>On Windows</strong><a class="headerlink" href="#on-windows" title="Link to this heading"></a></h3>
 <ol class="arabic">
@@ -114,7 +158,7 @@
 </li>
 <li><p>Activate the environment with:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>\<span class="n">env</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -139,7 +183,7 @@
 </li>
 <li><p>Activate the environment with:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
 </div>
 </div></blockquote>

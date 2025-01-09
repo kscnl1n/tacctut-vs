@@ -36,6 +36,6 @@ Objectives :
    How Are They Different
    How to Install Conda
    How to Create a Virtual Environment
-   How to Activate a Virtual Environment
+   How to Create and Activate a Virtual Environment
 
    

@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How to Activate a Virtual Environment" href="How%20to%20Activate%20a%20Virtual%20Environment.html" />
+    <link rel="next" title="How to Create and Activate a Virtual Environment" href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html" />
     <link rel="prev" title="How to Install Conda" href="How%20to%20Install%20Conda.html" /> 
 </head>
 
@@ -55,7 +55,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="How%20to%20Activate%20a%20Virtual%20Environment.html">How to Activate a Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html">How to Create and Activate a Virtual Environment</a></li>
 </ul>
 
         </div>
@@ -91,34 +91,21 @@
 <div><ul class="simple">
 <li><p>Python 3.3 or newer installed on your system.</p></li>
 <li><p>A terminal or command prompt to execute commands.</p></li>
-<li><p>SSH onto a TACC machine</p></li>
 </ul>
 </div></blockquote>
 </section>
 <section id="steps-to-create-a-virtual-environment">
 <h2>Steps to Create a Virtual Environment<a class="headerlink" href="#steps-to-create-a-virtual-environment" title="Link to this heading"></a></h2>
+<p>First, ensure you are SSH-ed into a TACC machine and in the proper directory.</p>
 <ol class="arabic">
 <li><p><strong>Open a Terminal or Command Prompt</strong>
 Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.</p></li>
-<li><p><strong>Run the Command</strong>
-Execute the appropriate command based on your operating system:</p>
-<ul>
-<li><dl>
-<dt><strong>On Windows</strong>:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myenv</span>
-</pre></div>
-</div>
+<li><p><strong>Create a Directory</strong>
+Create a project directory that you will be using the virtual environment for</p>
+<dl class="simple">
+<dt>::</dt><dd><p>mkdir my_vir_env</p>
 </dd>
 </dl>
-</li>
-<li><dl>
-<dt><strong>On macOS/Linux</strong>:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myenv</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-</ul>
-<p>Replace <cite>myenv</cite> with the name of your virtual environment directory.</p>
 </li>
 <li><p><strong>Verify the Creation</strong>
 After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p></li>
@@ -146,7 +133,7 @@ After running the command, a new directory (e.g., <cite>myenv</cite>) will be cr
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="How%20to%20Install%20Conda.html" class="btn btn-neutral float-left" title="How to Install Conda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="How%20to%20Activate%20a%20Virtual%20Environment.html" class="btn btn-neutral float-right" title="How to Activate a Virtual Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html" class="btn btn-neutral float-right" title="How to Create and Activate a Virtual Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
