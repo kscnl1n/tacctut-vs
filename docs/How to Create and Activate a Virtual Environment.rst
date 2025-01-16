@@ -10,7 +10,9 @@ Prerequisites
 
 Steps to Create a Virtual Environment
 -------------------------------------
-First, ensure you are SSH-ed into a TACC machine and in the proper directory.
+.. note::   
+    
+    First, ensure you are SSH-ed into a TACC machine and in the proper directory.
 
 1. **Open a Terminal or Command Prompt**
    Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
@@ -99,6 +101,7 @@ When you’re done working in your virtual environment, you can deactivate it to
 1. Simply run the following command in your terminal (works on all operating systems):
 
     ::
+        
         deactivate
 
 2. You’ll notice the environment name disappears from your command line, confirming the environment has been deactivated.
