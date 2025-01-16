@@ -41,13 +41,13 @@ Some TACC systems require two-factor authentication. Follow the on-screen prompt
 Tips and Troubleshooting
 ------------------------
 - If you cannot connect, verify your username, hostname, and network settings.
-- Contact TACC support if you encounter issues: `https://portal.tacc.utexas.edu/help`
+- Contact TACC support if you encounter issues: `<https://portal.tacc.utexas.edu/help/>`_
 
 Extra information
 -----------------
 For more information, visit the official TACC documentation:
-`https://www.tacc.utexas.edu/user-services/user-guides`
+`<https://www.tacc.utexas.edu/user-services/user-guides/>`_
 
 
-Now we should request a Node to work on.
+Now we should request a Node to work on. You can do this by 
 

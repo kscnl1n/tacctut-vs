@@ -98,7 +98,8 @@ When you’re done working in your virtual environment, you can deactivate it to
 
 1. Simply run the following command in your terminal (works on all operating systems):
 
-deactivate
+    ::
+        deactivate
 
 2. You’ll notice the environment name disappears from your command line, confirming the environment has been deactivated.
 

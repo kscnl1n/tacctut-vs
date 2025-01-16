@@ -19,7 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="How to Create a Virtual Environment" href="How%20to%20Create%20a%20Virtual%20Environment.html" /> 
+    <link rel="next" title="How to Install Conda" href="How%20to%20Install%20Conda.html" />
+    <link rel="prev" title="How They Are Different" href="How%20Are%20They%20Different.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,25 +44,29 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Content:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Before%20We%20Start.html">Before We Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How%20to%20Create%20a%20Virtual%20Environment.html">How to Create a Virtual Environment</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Create and Activate a Virtual Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps-to-create-a-virtual-environment">Steps to Create a Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#understanding-the-structure">Understanding the Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-a-virtual-environment">Steps to Activate a Virtual Environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#on-windows"><strong>On Windows</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#on-macos-linux"><strong>On macOS/Linux</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Getting%20Started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Before%20We%20Start.html">Before We Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to Create and Activate a Virtual Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-create-a-virtual-environment">Steps to Create a Virtual Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-the-structure">Understanding the Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-activate-a-virtual-environment">Steps to Activate a Virtual Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#on-windows"><strong>On Windows</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-macos-linux"><strong>On macOS/Linux</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#deactivating-a-virtual-environment">Deactivating a Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deactivating-a-virtual-environment">Deactivating a Virtual Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Containers%20Tutorial.html">Containers Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lets%20Get%20Advanced.html">Lets Get Advanced</a></li>
 </ul>
 
         </div>
@@ -78,6 +83,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Getting%20Started.html">Getting Started</a></li>
       <li class="breadcrumb-item active">How to Create and Activate a Virtual Environment</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/How to Create and Activate a Virtual Environment.rst.txt" rel="nofollow"> View page source</a>
@@ -108,10 +114,9 @@
 Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.</p></li>
 <li><p><strong>Create a Directory</strong>
 Create a project directory that you will be using the virtual environment for</p>
-<dl class="simple">
-<dt>::</dt><dd><p>mkdir my_vir_env</p>
-</dd>
-</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">my_vir_env</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>Verify the Creation</strong>
 After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p></li>
@@ -204,11 +209,15 @@ After running the command, a new directory (e.g., <cite>myenv</cite>) will be cr
 <section id="deactivating-a-virtual-environment">
 <h2>Deactivating a Virtual Environment<a class="headerlink" href="#deactivating-a-virtual-environment" title="Link to this heading"></a></h2>
 <p>When you’re done working in your virtual environment, you can deactivate it to return to the global Python environment:</p>
-<ol class="arabic simple">
-<li><p>Simply run the following command in your terminal (works on all operating systems):</p></li>
-</ol>
-<p>deactivate</p>
-<ol class="arabic simple" start="2">
+<ol class="arabic">
+<li><p>Simply run the following command in your terminal (works on all operating systems):</p>
+<blockquote>
+<div><dl class="simple">
+<dt>::</dt><dd><p>deactivate</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
 <li><p>You’ll notice the environment name disappears from your command line, confirming the environment has been deactivated.</p></li>
 </ol>
 </section>
@@ -225,7 +234,8 @@ After running the command, a new directory (e.g., <cite>myenv</cite>) will be cr
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="How%20to%20Create%20a%20Virtual%20Environment.html" class="btn btn-neutral float-left" title="How to Create a Virtual Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How%20Are%20They%20Different.html" class="btn btn-neutral float-left" title="How They Are Different" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How%20to%20Install%20Conda.html" class="btn btn-neutral float-right" title="How to Install Conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

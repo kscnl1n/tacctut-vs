@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Install Conda &mdash; AI/ML TACC Introduction  documentation</title>
+  <title>Getting Started &mdash; AI/ML TACC Introduction  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Containers Tutorial" href="Containers%20Tutorial.html" />
-    <link rel="prev" title="How to Create and Activate a Virtual Environment" href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html" /> 
+    <link rel="next" title="Before We Start" href="Before%20We%20Start.html" />
+    <link rel="prev" title="Welcome to Building AI/ML Environments" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,16 +44,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Content:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="Getting%20Started.html">Getting Started</a><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Before%20We%20Start.html">Before We Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
 <li class="toctree-l2"><a class="reference internal" href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html">How to Create and Activate a Virtual Environment</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">How to Install Conda</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#miniconda-vs-anaconda-vs-miniforge">Miniconda vs Anaconda vs MiniForge?</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Containers%20Tutorial.html">Containers Tutorial</a></li>
 </ul>
 </li>
@@ -74,10 +70,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="Getting%20Started.html">Getting Started</a></li>
-      <li class="breadcrumb-item active">How to Install Conda</li>
+      <li class="breadcrumb-item active">Getting Started</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/How to Install Conda.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Getting Started.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,32 +80,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="how-to-install-conda">
-<h1>How to Install Conda<a class="headerlink" href="#how-to-install-conda" title="Link to this heading"></a></h1>
-<p>Conda is a powerful package manager and environment management tool, widely used in data science and machine learning to manage dependencies and create isolated environments for different projects. This guide will walk you through the steps to install Conda on your system.</p>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
-<dl class="simple">
-<dt>Before you begin, ensure that you have the following:</dt><dd><ul class="simple">
-<li><p>A system running Windows, macOS, or Linux.</p></li>
-<li><p>A working internet connection to download Conda.</p></li>
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<p><strong>Intro :</strong></p>
+<p>Proper environment management is crucial in complex projects involving multiple languages,
+libraries, and frameworks. Thankfully, various tools have been created to address this, including Conda,
+Virtual Environments, Containers, and Pip.</p>
+<p><strong>Purpose :</strong></p>
+<p>The main purpose of using these tools is to ensure that the dependencies for one project don’t
+interfere with another. This is especially critical in complex AI/ML projects, where multiple libraries,
+frameworks, and languages may be used. The tools provide isolation, which helps avoid conflicts and
+ensures consistency across different development and production environments.</p>
+<p><strong>Objectives :</strong></p>
+<ul class="simple">
+<li><p><strong>Educate</strong> users about the pros and cons of different tools: virtual environments, Conda, and containers.</p></li>
+<li><p><strong>Optimize</strong> AI/ML workflows by leveraging TACC’s high-performance hardware like GPUs, ensuring efficient use of resources.</p></li>
+<li><p><strong>Provide</strong> actionable instructions for building these environments with a focus on ease of use and compatibility with TACC machines</p></li>
 </ul>
-</dd>
-</dl>
-</section>
-<section id="miniconda-vs-anaconda-vs-miniforge">
-<h2>Miniconda vs Anaconda vs MiniForge?<a class="headerlink" href="#miniconda-vs-anaconda-vs-miniforge" title="Link to this heading"></a></h2>
-<p>Miniconda is a minimal installer for Conda that allows you to install Conda without unnecessary packages, saving disk space. You can also install Anaconda, which is a distribution of Conda with additional pre-installed with over 300 data science packages, but Miniconda is recommended for a smaller installation.</p>
-<p>For this guide’s purposes, we will use MiniForge.</p>
-</section>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Before%20We%20Start.html">Before We Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html">How to Create and Activate a Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Containers%20Tutorial.html">Containers Tutorial</a></li>
+</ul>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html" class="btn btn-neutral float-left" title="How to Create and Activate a Virtual Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Containers%20Tutorial.html" class="btn btn-neutral float-right" title="Containers Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Building AI/ML Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Before%20We%20Start.html" class="btn btn-neutral float-right" title="Before We Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,41 +1,31 @@
-Introduction to building AI/ML environments 
-===========================================
+Welcome to Building AI/ML Environments
+======================================
 
-Intro : 
--------
-Proper environment management is crucial in complex projects involving multiple languages, 
-libraries, and frameworks. Thankfully, various tools have been created to address this, including Conda, 
-Virtual Environments, Containers, and Pip. 
+Overview
+--------
+This website was built as a resource for setting up and managing environments tailored to AI and Machine Learning projects specifically on TACC's systems. Whether you are a beginner or an experienced researcher, this comprehensive guide will help you decide on the best tools to streamline your workflow.
 
-**make longer**
+What You Will Learn
+-------------------
+   - **Environment Setup:** Step-by-step instructions for configuring tools and libraries.
+   - **Containerization:** Tutorials on using Docker for scalable environments.
+   - **Tools :** Explanations on the most popular tools and how to utalize them.
 
-Purpose : 
----------
-The main purpose of using these tools is to ensure that the dependencies for one project don’t 
-interfere with another. This is especially critical in complex AI/ML projects, where multiple libraries, 
-frameworks, and languages may be used. The tools provide isolation, which helps avoid conflicts and 
-ensures consistency across different development and production environments. 
+Highlights
+----------
+   - **Quick Start Guides:** Set up your first AI/ML project.
+   - **Interactive Tutorials:** Detailed, easy to follow, hands-on examples.
 
-**make longer**
-
-Objectives :
-------------
-* **Educate** users about the pros and cons of different tools: virtual environments, Conda, and containers.
-* **Optimize** AI/ML workflows by leveraging TACC’s high-performance hardware like GPUs, ensuring efficient use of resources.
-* **Provide** actionable instructions for building these environments with a focus on ease of use and compatibility with TACC machines
-
-
-
-
+Who Is This For?
+----------------
+   - AI/ML Enthusiasts
+   - Data Scientists
+   - Software Engineers
+   - Researchers
+     
 .. toctree::
    :maxdepth: 2
    :caption: Content:
 
-   Before We Start
-   Tools
-   How Are They Different
-   How to Install Conda
-   How to Create a Virtual Environment
-   How to Create and Activate a Virtual Environment
-
-   
+   Getting Started
+   Lets Get Advanced

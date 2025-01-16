@@ -15,8 +15,6 @@ Containers are lightweight, standalone, and executable software packages that in
 * **Cloud and Production-Ready**: Widely used in cloud environments and for production deployments due to their efficiency and reliability (e.g., Docker).
 * **Scalable**: Ideal for scalable, microservice-based architectures and container orchestration tools like Kubernetes.
 
-*Add Demo Here*
-
 Conda
 -----
 
@@ -41,8 +39,6 @@ Virtual environments are essential tools for isolating dependencies within Pytho
 * **Lightweight**: Unlike Conda or containers, virtual environments only manage Python libraries, which can make them lighter and quicker to set up.
 * **No System-Level Dependencies**: Virtual environments do not handle non-Python system libraries or software dependencies.
 * **Ideal for Small Projects**: Best suited for smaller projects where only Python dependencies need to be isolated without the complexity of managing other tools.
-
-*Add Demo Here*
 
 Pip
 ---
