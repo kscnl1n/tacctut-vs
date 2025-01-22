@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How They Are Different" href="How%20Are%20They%20Different.html" />
-    <link rel="prev" title="Before We Start" href="Before%20We%20Start.html" /> 
+    <link rel="prev" title="Connecting to TACC" href="Connecting%20to%20TACC.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,7 +45,7 @@
               <p class="caption" role="heading"><span class="caption-text">Content:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Getting%20Started.html">Getting Started</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Before%20We%20Start.html">Before We Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Connecting%20to%20TACC.html">Connecting to TACC</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Tools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#containers">Containers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#key-features"><strong>Key Features</strong></a></li>
@@ -57,10 +57,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#virtual-environments">Virtual Environments</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id2"><strong>Key Features</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#pip">Pip</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3"><strong>Key Features</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -104,7 +100,8 @@
 <p>This section provides an overview of several essential tools used in development and deployment workflows. These tools enable seamless management of dependencies, environments, and the portability of applications across different systems.</p>
 <section id="containers">
 <h2>Containers<a class="headerlink" href="#containers" title="Link to this heading"></a></h2>
-<p>Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: the code, runtime, system tools, libraries, and settings. By packaging the application and its environment together, containers ensure that it runs consistently, regardless of the environment or infrastructure.</p>
+<p>Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: the code, runtime, system tools, libraries, and settings. By packaging the application and its environment together, containers ensure that it runs consistently, regardless of the environment or infrastructure.
+Additionally, they are essential performant virtual machines. The operating system (OS) is also bundled with the application and its dependencies, ensuring a comprehensive and consistent execution environment.</p>
 <section id="key-features">
 <h3><strong>Key Features</strong><a class="headerlink" href="#key-features" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -113,6 +110,8 @@
 <li><p><strong>Cloud and Production-Ready</strong>: Widely used in cloud environments and for production deployments due to their efficiency and reliability (e.g., Docker).</p></li>
 <li><p><strong>Scalable</strong>: Ideal for scalable, microservice-based architectures and container orchestration tools like Kubernetes.</p></li>
 </ul>
+<a class="reference internal image-reference" href="https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_container.png"><img alt="Applications isolated by containers." class="align-center" src="https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_container.png" style="width: 500px;" />
+</a>
 </section>
 </section>
 <section id="conda">
@@ -140,18 +139,8 @@
 <li><p><strong>No System-Level Dependencies</strong>: Virtual environments do not handle non-Python system libraries or software dependencies.</p></li>
 <li><p><strong>Ideal for Small Projects</strong>: Best suited for smaller projects where only Python dependencies need to be isolated without the complexity of managing other tools.</p></li>
 </ul>
-</section>
-</section>
-<section id="pip">
-<h2>Pip<a class="headerlink" href="#pip" title="Link to this heading"></a></h2>
-<p>Pip is the default package manager for Python, widely used to install and manage Python libraries within environments. While it allows direct installation of libraries, it does not handle environment isolation or dependency management, which are managed by tools like virtual environments or Conda.</p>
-<section id="id3">
-<h3><strong>Key Features</strong><a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p><strong>Package Management</strong>: Installs Python libraries directly into the active environment from the Python Package Index (PyPI).</p></li>
-<li><p><strong>Integration with Other Tools</strong>: Often used alongside virtual environments or Conda to install and manage dependencies.</p></li>
-<li><p><strong>No Dependency Management</strong>: Pip does not manage system-level dependencies or handle environment isolation, relying on other tools to do so.</p></li>
-</ul>
+<a class="reference internal image-reference" href="https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_vm.png"><img alt="Applications isolated by VMs." class="align-center" src="https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_vm.png" style="width: 500px;" />
+</a>
 </section>
 </section>
 </section>
@@ -160,7 +149,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Before%20We%20Start.html" class="btn btn-neutral float-left" title="Before We Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Connecting%20to%20TACC.html" class="btn btn-neutral float-left" title="Connecting to TACC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="How%20Are%20They%20Different.html" class="btn btn-neutral float-right" title="How They Are Different" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

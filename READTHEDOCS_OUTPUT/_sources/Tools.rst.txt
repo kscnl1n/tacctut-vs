@@ -7,6 +7,8 @@ Containers
 ----------
 
 Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: the code, runtime, system tools, libraries, and settings. By packaging the application and its environment together, containers ensure that it runs consistently, regardless of the environment or infrastructure.
+Additionally, they are essential performant virtual machines. The operating system (OS) is also bundled with the application and its dependencies, ensuring a comprehensive and consistent execution environment.
+
 
 **Key Features**  
 ^^^^^^^^^^^^^^^^  
@@ -14,6 +16,13 @@ Containers are lightweight, standalone, and executable software packages that in
 * **Cross-Platform Consistency**: Guarantees that applications will behave the same across various platforms, eliminating issues related to different configurations or system setups.
 * **Cloud and Production-Ready**: Widely used in cloud environments and for production deployments due to their efficiency and reliability (e.g., Docker).
 * **Scalable**: Ideal for scalable, microservice-based architectures and container orchestration tools like Kubernetes.
+
+
+.. image:: https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_container.png
+   :alt: Applications isolated by containers.
+   :width: 500px
+   :align: center
+
 
 Conda
 -----
@@ -28,6 +37,7 @@ Conda is a powerful environment and package manager designed to handle not just 
 * **Data Science and ML Focus**: Conda simplifies the setup for data science and machine learning environments by handling complex dependencies across languages and tools.
 * **Package Management**: Unlike Python’s default package manager (pip), Conda also manages non-Python system dependencies, making it more comprehensive.
 
+
 Virtual Environments
 --------------------
 
@@ -40,13 +50,7 @@ Virtual environments are essential tools for isolating dependencies within Pytho
 * **No System-Level Dependencies**: Virtual environments do not handle non-Python system libraries or software dependencies.
 * **Ideal for Small Projects**: Best suited for smaller projects where only Python dependencies need to be isolated without the complexity of managing other tools.
 
-Pip
----
-
-Pip is the default package manager for Python, widely used to install and manage Python libraries within environments. While it allows direct installation of libraries, it does not handle environment isolation or dependency management, which are managed by tools like virtual environments or Conda.
-
-**Key Features**  
-^^^^^^^^^^^^^^^^  
-* **Package Management**: Installs Python libraries directly into the active environment from the Python Package Index (PyPI).
-* **Integration with Other Tools**: Often used alongside virtual environments or Conda to install and manage dependencies.
-* **No Dependency Management**: Pip does not manage system-level dependencies or handle environment isolation, relying on other tools to do so.
+.. image:: https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_vm.png
+   :alt: Applications isolated by VMs.
+   :width: 500px
+   :align: center

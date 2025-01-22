@@ -45,7 +45,7 @@
               <p class="caption" role="heading"><span class="caption-text">Content:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Getting%20Started.html">Getting Started</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Before%20We%20Start.html">Before We Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Connecting%20to%20TACC.html">Connecting to TACC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="How%20Are%20They%20Different.html">How They Are Different</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">How to Create and Activate a Virtual Environment</a><ul>
@@ -53,11 +53,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#steps-to-create-a-virtual-environment">Steps to Create a Virtual Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#understanding-the-structure">Understanding the Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#steps-to-activate-a-virtual-environment">Steps to Activate a Virtual Environment</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#on-windows"><strong>On Windows</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#on-macos-linux"><strong>On macOS/Linux</strong></a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-activate-a-virtual-environment">Steps to Activate a Virtual Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#deactivating-a-virtual-environment">Deactivating a Virtual Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
@@ -108,21 +104,34 @@
 </section>
 <section id="steps-to-create-a-virtual-environment">
 <h2>Steps to Create a Virtual Environment<a class="headerlink" href="#steps-to-create-a-virtual-environment" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>First, ensure you are SSH-ed into a TACC machine and in the proper directory.</p>
-</div>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p><strong>Open a Terminal or Command Prompt</strong>
 Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.</p></li>
-<li><p><strong>Create a Directory</strong>
-Create a project directory that you will be using the virtual environment for</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">my_vir_env</span>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It would be best to use the $WORK directory</p>
+</div>
+<ol class="arabic" start="3">
+<li><dl class="simple">
+<dt><strong>Create the Virtual Environment</strong></dt><dd><p>Run this command to create a virtual environment. You can replace ‘myenv’ with whatever you want to name your virtual environment.</p>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myenv</span>
 </pre></div>
 </div>
 </li>
+</ol>
+<ol class="arabic" start="3">
 <li><p><strong>Verify the Creation</strong>
-After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p></li>
+After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">UserName</span><span class="nd">@System</span> <span class="n">myenv</span> <span class="o">%</span> <span class="n">ls</span>
+<span class="nb">bin</span>             <span class="n">include</span>         <span class="n">lib</span>             <span class="n">pyvenv</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ol>
 </section>
 <section id="understanding-the-structure">
@@ -153,8 +162,6 @@ After running the command, a new directory (e.g., <cite>myenv</cite>) will be cr
 <p class="admonition-title">Note</p>
 <p>Ensure you are SSH-ed into a TACC machine and in the proper directory.</p>
 </div>
-<section id="on-windows">
-<h3><strong>On Windows</strong><a class="headerlink" href="#on-windows" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Navigate to the directory containing your virtual environment using <cite>cd</cite>.</p></li>
 <li><p>Run the following command:</p>
@@ -172,42 +179,12 @@ After running the command, a new directory (e.g., <cite>myenv</cite>) will be cr
 </div></blockquote>
 </li>
 </ol>
-<p>Replace <cite>env</cite> with the name of your virtual environment. For example in our previous tutorial, <cite>myemv</cite></p>
+<p>Replace <cite>virtual-env</cite> with the name of your virtual environment. For example in our previous tutorial, <cite>myenv</cite></p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">YourUserName</span>\<span class="n">YourProject</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">UserName</span>\<span class="n">YourProject</span>
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-<section id="on-macos-linux">
-<h3><strong>On macOS/Linux</strong><a class="headerlink" href="#on-macos-linux" title="Link to this heading"></a></h3>
-<ol class="arabic">
-<li><dl>
-<dt>Navigate to the directory containing your virtual environment.</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">environment</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-<li><p>Activate the environment with:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p>Replace <cite>env</cite> with the name of your virtual environment. For example in our previous tutorial, <cite>myemv</cite></p>
-<ol class="arabic" start="3">
-<li><p>Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(myenv) user@hostname:~/YourProject$
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</section>
 </section>
 <section id="deactivating-a-virtual-environment">
 <h2>Deactivating a Virtual Environment<a class="headerlink" href="#deactivating-a-virtual-environment" title="Link to this heading"></a></h2>

@@ -19,13 +19,4 @@ Containers vs Virtual Environments
 * **Containers:** Fully encapsulated and provide complete isolation, including the operating system, making them ideal for deployment and running applications consistently across different systems.
 * **Virtual Environments:** Only isolates Python libraries and does not include system dependencies or the operating system itself. They are lightweight and easy to set up but are not as portable or complete as containers.
 
-.. image:: https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_vm.png
-   :alt: Applications isolated by VMs.
-   :width: 500px
-   :align: center
 
-
-.. image:: https://containers-at-tacc.readthedocs.io/en/latest/_images/arch_container.png
-   :alt: Applications isolated by containers.
-   :width: 500px
-   :align: center

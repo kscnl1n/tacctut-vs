@@ -1,5 +1,5 @@
-Before We Start
-===============
+Connecting to TACC
+==================
 
 All these tutorials will be configured to work specifically on TACC systems so before we proceed, here is a quick tutorial on how to access and work on TACC's systems.
 
@@ -42,6 +42,16 @@ Tips and Troubleshooting
 ------------------------
 - If you cannot connect, verify your username, hostname, and network settings.
 - Contact TACC support if you encounter issues: `<https://portal.tacc.utexas.edu/help/>`_
+
+Directories Explained
+---------------------
+
+While working on TACC systems, there are 3 main directories that users will utilize. $HOME, $WORK, and $SCRATCH. Understanding the difference between the three are quite simple: 
+- $HOME: Useful for projects needing small environments as $HOME does not have much storage
+- $WORK: Useful for general projects ...continue
+- $SCRATCH: Useful for work that may be discarded as this directory may get purged
+
+However, a potential issue with $WORK is that is you have a very large environment...continue
 
 Extra information
 -----------------

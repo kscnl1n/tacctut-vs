@@ -10,22 +10,29 @@ Prerequisites
 
 Steps to Create a Virtual Environment
 -------------------------------------
-.. note::   
-    
-    First, ensure you are SSH-ed into a TACC machine and in the proper directory.
 
 1. **Open a Terminal or Command Prompt**
    Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
 
-2. **Create a Directory**
-   Create a project directory that you will be using the virtual environment for
+.. note::
+   
+    It would be best to use the $WORK directory
+
+
+3. **Create the Virtual Environment**
+    Run this command to create a virtual environment. You can replace 'myenv' with whatever you want to name your virtual environment.
 
    ::
-         
-         mkdir my_vir_env
+
+         python3 -m venv myenv
 
 3. **Verify the Creation**
    After running the command, a new directory (e.g., `myenv`) will be created in your current location. This directory contains the files needed for the virtual environment.
+
+    ::
+        
+        (base) UserName@System myenv % ls
+        bin		include		lib		pyvenv.cfg
 
 Understanding the Structure
 ---------------------------
@@ -50,8 +57,7 @@ Steps to Activate a Virtual Environment
     
     Ensure you are SSH-ed into a TACC machine and in the proper directory.
 
-**On Windows**
-^^^^^^^^^^^^^^
+
 1. Navigate to the directory containing your virtual environment using `cd`.
 2. Run the following command:
 
@@ -65,33 +71,12 @@ Steps to Activate a Virtual Environment
 
         source /path/to/virtual-env/bin/activate
 
-Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
+Replace `virtual-env` with the name of your virtual environment. For example in our previous tutorial, `myenv`
 
     ::
         
-        (myenv) C:\Users\YourUserName\YourProject
+        (myenv) C:\Users\UserName\YourProject
 
-
-**On macOS/Linux**
-^^^^^^^^^^^^^^^^^^
-1. Navigate to the directory containing your virtual environment.
-    ::
-        
-        cd /path/to/your/environment
-
-2. Activate the environment with:
-
-    ::
-
-        source /path/to/virtual-env/bin/activate
-
-Replace `env` with the name of your virtual environment. For example in our previous tutorial, `myemv`
-
-3. Similar to Windows, you’ll see the environment name in parentheses at the beginning of your command line:
-
-    ::
-
-        (myenv) user@hostname:~/YourProject$
 
 
 Deactivating a Virtual Environment
@@ -101,7 +86,7 @@ When you’re done working in your virtual environment, you can deactivate it to
 1. Simply run the following command in your terminal (works on all operating systems):
 
     ::
-        
+
         deactivate
 
 2. You’ll notice the environment name disappears from your command line, confirming the environment has been deactivated.

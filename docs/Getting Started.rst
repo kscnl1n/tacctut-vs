@@ -27,7 +27,7 @@ ensures consistency across different development and production environments.
    :maxdepth: 1
    :caption: Content:
 
-   Before We Start
+   Connecting to TACC
    Tools
    How Are They Different
    How to Create and Activate a Virtual Environment

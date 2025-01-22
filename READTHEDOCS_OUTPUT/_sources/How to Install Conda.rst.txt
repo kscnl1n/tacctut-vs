@@ -6,14 +6,12 @@ Conda is a powerful package manager and environment management tool, widely used
 Prerequisites
 -------------
 Before you begin, ensure that you have the following:
-    - A system running Windows, macOS, or Linux.
     - A working internet connection to download Conda.
+    - A terminal or command prompt to execute commands.
 
-Miniconda vs Anaconda vs MiniForge?
+What is Conda-Forge and Mini-Forge?
 -----------------------------------
-Miniconda is a minimal installer for Conda that allows you to install Conda without unnecessary packages, saving disk space. You can also install Anaconda, which is a distribution of Conda with additional pre-installed with over 300 data science packages, but Miniconda is recommended for a smaller installation.
-
-
 For this guide's purposes, we will use MiniForge.
+**explain what miniforge is, should I include miniconda and anaconda and conda forge explanation?**
 
 

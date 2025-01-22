@@ -9,7 +9,7 @@ What You Will Learn
 -------------------
    - **Environment Setup:** Step-by-step instructions for configuring tools and libraries.
    - **Containerization:** Tutorials on using Docker for scalable environments.
-   - **Tools :** Explanations on the most popular tools and how to utalize them.
+   - **Tools:** Explanations on the most popular tools and how to utalize them.
 
 Highlights
 ----------
