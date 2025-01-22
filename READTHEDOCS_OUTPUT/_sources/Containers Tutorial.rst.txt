@@ -13,4 +13,6 @@ Steps to Install PyTorch with CUDA on Docker
 
 1. Install Docker (if not already installed)
 
-
+    `Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_
+    `Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_
+    `Linux <https://docs.docker.com/desktop/setup/install/linux/>`_

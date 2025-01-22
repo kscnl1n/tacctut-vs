@@ -52,6 +52,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">How to Install Conda</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-is-conda-forge-and-mini-forge">What is Conda-Forge and Mini-Forge?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-install-conda">Steps to Install Conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-and-managing-environments">Creating and Managing Environments</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Containers%20Tutorial.html">Containers Tutorial</a></li>
@@ -100,8 +102,92 @@
 </section>
 <section id="what-is-conda-forge-and-mini-forge">
 <h2>What is Conda-Forge and Mini-Forge?<a class="headerlink" href="#what-is-conda-forge-and-mini-forge" title="Link to this heading"></a></h2>
-<p>For this guide’s purposes, we will use MiniForge.
-<strong>explain what miniforge is, should I include miniconda and anaconda and conda forge explanation?</strong></p>
+<p>Conda-Forge is a comunity-driven repository of conda packages. Mini-Forge is a lightweight installer for Conda, optimized to use Conda-Forge by default
+For this guide’s purposes, we will use MiniForge.</p>
+</section>
+<section id="steps-to-install-conda">
+<h2>Steps to Install Conda<a class="headerlink" href="#steps-to-install-conda" title="Link to this heading"></a></h2>
+<p>1. <strong>Download MiniForge</strong>
+- Go to the MiniForge GitHub page. <cite>https://github.com/conda-forge/miniforge/releases/latest</cite>
+- Choose the Appropriate installer for your operating system:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows</p></li>
+<li><p>Mac</p></li>
+<li><p>Linux</p></li>
+</ul>
+</div></blockquote>
+<p>2. <strong>Install MiniForge</strong>
+- Open your terminal or command prompt.
+Navigate to the directory where the installer was downloaded.
+- Run the installer command:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Mac/Linux: Use the terminal to run the installer:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniforge3</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Windows: Double-click the .exe file and follow the on screen instructions</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p><strong>Initialize Conda</strong>
+After installation, initialize Conda to configure your shell:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>Restart your terminal for the changes to take effect.</p>
+</div></blockquote>
+</li>
+<li><dl>
+<dt><strong>Verify the Installation</strong></dt><dd><p>Confirm that Conda is installed by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>This should display the installed Conda version.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Congratulations! You now have Conda installed on your system.</p>
+</section>
+<section id="creating-and-managing-environments">
+<h2>Creating and Managing Environments<a class="headerlink" href="#creating-and-managing-environments" title="Link to this heading"></a></h2>
+<p>Once Conda is installed, you can start creating and managing environments using the following commands:
+1. <strong>Create a new environment</strong>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">myenv</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p><strong>Activate an environment</strong>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">myenv</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Deactivate an environment</strong>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Remove an environment</strong>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">myenv</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>For more information, visit the official Conda documentation:
+<cite>https://docs.conda.io/</cite></p>
 </section>
 </section>
 
