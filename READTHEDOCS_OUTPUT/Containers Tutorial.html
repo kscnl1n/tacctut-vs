@@ -51,7 +51,9 @@
 <li class="toctree-l2"><a class="reference internal" href="How%20to%20Create%20and%20Activate%20a%20Virtual%20Environment.html">How to Create and Activate a Virtual Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Containers Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-docker-image">What is a Docker Image?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-install-pytorch-with-cuda-on-docker">Steps to Install PyTorch with CUDA on Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -86,7 +88,11 @@
              
   <section id="containers-tutorial">
 <h1>Containers Tutorial<a class="headerlink" href="#containers-tutorial" title="Link to this heading"></a></h1>
-<p>Specifically how to install pytorch with cuda on docker container, load the container and install pytorch</p>
+<p>Docker is a platform for developing, shipping, and running applications inside containers. Containers are lightweight, portable, and ensure that applications run consistently across different environments.</p>
+<section id="what-is-a-docker-image">
+<h2>What is a Docker Image?<a class="headerlink" href="#what-is-a-docker-image" title="Link to this heading"></a></h2>
+<p>A Docker image is a pre-configured package that contains everything needed to run an application, including the code, runtime, libraries, and dependencies. Once an image is instantiated, it becomes a container, which is an isolated runtime environment.</p>
+</section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
 <dl class="simple">
@@ -96,16 +102,67 @@
 </ul>
 </dd>
 </dl>
-<p>Steps to Install PyTorch with CUDA on Docker</p>
-<ol class="arabic">
-<li><p>Install Docker (if not already installed)</p>
+</section>
+<section id="steps-to-install-pytorch-with-cuda-on-docker">
+<h2>Steps to Install PyTorch with CUDA on Docker<a class="headerlink" href="#steps-to-install-pytorch-with-cuda-on-docker" title="Link to this heading"></a></h2>
+<p><strong>Step 1: Install Docker (if not already installed)</strong></p>
 <blockquote>
-<div><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Mac</a>
-<a class="reference external" href="https://docs.docker.com/desktop/setup/install/windows-install/">Windows</a>
-<a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Linux</a></p>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Mac</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/windows-install/">Windows</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Linux</a></p></li>
+</ul>
 </div></blockquote>
-</li>
-</ol>
+<dl>
+<dt>To verify Docker is installed, run:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p><strong>Step 2: Open up the Docker Command Line Interface</strong></p>
+<p>Ensure that Docker is running, then open the integrated terminal.</p>
+<p><strong>Step 3: SSH onto A TACC Machine</strong>
+Use the following command to connect to TACC systems (replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;@&lt;</span><span class="n">hostname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong>
+To connect to the Frontera system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@frontera</span><span class="o">.</span><span class="n">tacc</span><span class="o">.</span><span class="n">utexas</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p><strong>Step 4: Enter Your Password</strong>
+When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.</p>
+<p><strong>Step 5: Two-Factor Authentication</strong>
+TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.</p>
+<p><strong>Step 6. Pull a Prebuilt PyTorch Doocker Image</strong></p>
+<p>Instead of creating our own Dockerfile, we can use an official PyTorch image from DockerHub</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DockerHub is official cloud-based repository where developers store, share, and distribute Docker images. Similar to GitHub but for Docker containers.</p>
+</div>
+<p>Run the following command to pull the latest PyTorch image with CUDA support.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">pytorch</span><span class="o">/</span><span class="n">pytorch</span><span class="p">:</span><span class="mf">2.5.1</span><span class="o">-</span><span class="n">cuda12</span><span class="mf">.4</span><span class="o">-</span><span class="n">cudnn9</span><span class="o">-</span><span class="n">devel</span>
+</pre></div>
+</div>
+<p>CUDA is an API that allows software to utilize NVIDIA GPUs for accelerated computing. This is essential for deep learning because GPUs process tasks much faster than CPUs.
+Since TACC machines have NVIDIA GPUs, we must use a CUDA-enabled PyTorch image to fully leverage GPU acceleration.</p>
+<p><strong>Step 7. Run a Container</strong></p>
+<p>Once the image is downloaded, we can create and run a Docker container from it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">gpus</span> <span class="nb">all</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="n">pytorch</span><span class="o">/</span><span class="n">pytorch</span><span class="p">:</span><span class="mf">2.5.1</span><span class="o">-</span><span class="n">cuda12</span><span class="mf">.4</span><span class="o">-</span><span class="n">cudnn9</span><span class="o">-</span><span class="n">devel</span>
+</pre></div>
+</div>
+<p>Flags:
+-it -&gt; interactive terminal
+– rm -&gt; removes the container after exit.
+–gpus all -&gt; enable GPU access for CUDA-enabled containers</p>
+<p><strong>Step 8. Run a PyTorych Script Inside the Container</strong></p>
+<blockquote>
+<div><p>Once inside the container, start Python</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
 </section>
 </section>
 

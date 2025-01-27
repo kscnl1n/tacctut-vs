@@ -6,7 +6,7 @@ All these tutorials will be configured to work specifically on TACC systems so b
 Prerequisites
 -------------
 1. **TACC Account**  
-    - Ensure you have an active TACC account.  
+    - If you haven't yet, create a TACC account `here <https://tacc.utexas.edu/portal/login?from=/portal/>`.  
 
 2. **SSH Client**  
     - **Linux/macOS**: Use the built-in terminal.  
@@ -35,8 +35,8 @@ To connect to the Frontera system:
 **Step 3: Enter Your Password**  
 When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.
 
-**Step 4: Set Up Two-Factor Authentication (if required)**  
-Some TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.
+**Step 4: Set Up Two-Factor Authentication**  
+TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.
 
 Tips and Troubleshooting
 ------------------------
@@ -47,9 +47,9 @@ Directories Explained
 ---------------------
 
 While working on TACC systems, there are 3 main directories that users will utilize. $HOME, $WORK, and $SCRATCH. Understanding the difference between the three are quite simple: 
-- $HOME: Useful for projects needing small environments as $HOME does not have much storage
-- $WORK: Useful for general projects ...continue
-- $SCRATCH: Useful for work that may be discarded as this directory may get purged
+    - $HOME: Useful for projects needing small environments as $HOME does not have much storage
+    - $WORK: Useful for general projects ...continue
+    - $SCRATCH: Useful for work that may be discarded as this directory may get purged
 
 However, a potential issue with $WORK is that is you have a very large environment...continue
 

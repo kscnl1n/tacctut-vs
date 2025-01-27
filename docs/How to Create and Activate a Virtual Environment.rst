@@ -14,6 +14,26 @@ Steps to Create a Virtual Environment
 1. **Open a Terminal or Command Prompt**
    Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
 
+**Run the SSH Command**  
+Use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
+
+:: 
+
+    ssh <username>@<hostname>
+
+**Example:**
+To connect to the Frontera system:
+
+::
+
+    ssh username@frontera.tacc.utexas.edu
+
+**Enter Your Password**  
+When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.
+
+**Step 4: Set Up Two-Factor Authentication**  
+TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.
+
 .. note::
    
     It would be best to use the $WORK directory
