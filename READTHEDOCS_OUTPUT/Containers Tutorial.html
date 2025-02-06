@@ -52,8 +52,10 @@
 <li class="toctree-l2"><a class="reference internal" href="How%20to%20Install%20Conda.html">How to Install Conda</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Containers Tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#what-is-a-docker-image">What is a Docker Image?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apptainer-vs-container">Apptainer vs Container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#steps-to-install-pytorch-with-cuda-on-docker">Steps to Install PyTorch with CUDA on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -93,11 +95,13 @@
 <h2>What is a Docker Image?<a class="headerlink" href="#what-is-a-docker-image" title="Link to this heading"></a></h2>
 <p>A Docker image is a pre-configured package that contains everything needed to run an application, including the code, runtime, libraries, and dependencies. Once an image is instantiated, it becomes a container, which is an isolated runtime environment.</p>
 </section>
+<section id="apptainer-vs-container">
+<h2>Apptainer vs Container<a class="headerlink" href="#apptainer-vs-container" title="Link to this heading"></a></h2>
+</section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
 <dl class="simple">
 <dt>Before you begin, ensure that you have the following:</dt><dd><ul class="simple">
-<li><p>A system with NVIDIA GPU for CUDA support (which TACC machines do)</p></li>
 <li><p>A working internet connection to download Docker.</p></li>
 </ul>
 </dd>
@@ -105,6 +109,8 @@
 </section>
 <section id="steps-to-install-pytorch-with-cuda-on-docker">
 <h2>Steps to Install PyTorch with CUDA on Docker<a class="headerlink" href="#steps-to-install-pytorch-with-cuda-on-docker" title="Link to this heading"></a></h2>
+<p>we call it this but its not really ON docker or using docker other than docker hub, is this the intended tutorial? im not sure if i have it right
+Apptainer runs Docker containers on HPC systems</p>
 <p><strong>Step 1: Install Docker (if not already installed)</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -113,16 +119,8 @@
 <li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Linux</a></p></li>
 </ul>
 </div></blockquote>
-<dl>
-<dt>To verify Docker is installed, run:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<p><strong>Step 2: Open up the Docker Command Line Interface</strong></p>
-<p>Ensure that Docker is running, then open the integrated terminal.</p>
-<p><strong>Step 3: SSH onto A TACC Machine</strong>
-Use the following command to connect to TACC systems (replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname):</p>
+<p><strong>Step 2: SSH onto A TACC Machine</strong>
+Open your terminal and use the following command to connect to TACC systems (replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;@&lt;</span><span class="n">hostname</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -131,38 +129,77 @@ To connect to the Frontera system:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@frontera</span><span class="o">.</span><span class="n">tacc</span><span class="o">.</span><span class="n">utexas</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
-<p><strong>Step 4: Enter Your Password</strong>
+<p><strong>Step 3: Enter Your Password</strong>
 When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.</p>
-<p><strong>Step 5: Two-Factor Authentication</strong>
+<p><strong>Step 4: Two-Factor Authentication</strong>
 TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.</p>
-<p><strong>Step 6. Pull a Prebuilt PyTorch Doocker Image</strong></p>
+<p><strong>Step 5: Request a Node</strong>
+If you try to download a Docker image right off the bat, your terminal will warn you!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) something$ idev -N 2 -n 2 -p rtx-dev -t 02:00:00
+</pre></div>
+</div>
+<p>//explain what this means, the Flags
+This might take a while but you will know that you have successfully loaded into a node when your command line shows (base) some numbers and what not</p>
+<p><strong>Step 6:  Load in Apptainer</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) something$ module list
+
+Currently Loaded Modules:
+1) intel/19.1.1   4) autotools/1.2   7) hwloc/1.11.12  10) tacc-apptainer/1.3.3
+2) impi/19.0.9    5) python3/3.7.0   8) xalt/2.10.34
+3) git/2.24.1     6) cmake/3.24.2    9) TACC
+
+
+(base) something$ module load tacc-apptainer
+
+verify with:
+(base) something$ type apptainer
+
+apptainer is /opt/apps/tacc-apptainer/1.3.3/bin/apptainer
+</pre></div>
+</div>
+<p><strong>Step 5. Pull a Prebuilt PyTorch Docker Image</strong></p>
 <p>Instead of creating our own Dockerfile, we can use an official PyTorch image from DockerHub</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>DockerHub is official cloud-based repository where developers store, share, and distribute Docker images. Similar to GitHub but for Docker containers.</p>
 </div>
 <p>Run the following command to pull the latest PyTorch image with CUDA support.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">pytorch</span><span class="o">/</span><span class="n">pytorch</span><span class="p">:</span><span class="mf">2.5.1</span><span class="o">-</span><span class="n">cuda12</span><span class="mf">.4</span><span class="o">-</span><span class="n">cudnn9</span><span class="o">-</span><span class="n">devel</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apptainer</span> <span class="n">pull</span> <span class="n">output</span><span class="o">.</span><span class="n">sif</span> <span class="n">docker</span><span class="p">:</span><span class="o">//</span><span class="n">pytorch</span><span class="o">/</span><span class="n">pytorch</span><span class="p">:</span><span class="mf">2.5.1</span><span class="o">-</span><span class="n">cuda12</span><span class="mf">.4</span><span class="o">-</span><span class="n">cudnn9</span><span class="o">-</span><span class="n">devel</span>
 </pre></div>
 </div>
+<p>This will download the image and convert it into an Apptainer image format (.sif).
+You can replace “output.sif” with whatever you would like to name the file. Otherwise it will default to the name of the image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>CUDA is an API that allows software to utilize NVIDIA GPUs for accelerated computing. This is essential for deep learning because GPUs process tasks much faster than CPUs.
 Since TACC machines have NVIDIA GPUs, we must use a CUDA-enabled PyTorch image to fully leverage GPU acceleration.</p>
-<p><strong>Step 7. Run a Container</strong></p>
-<p>Once the image is downloaded, we can create and run a Docker container from it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">gpus</span> <span class="nb">all</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="n">pytorch</span><span class="o">/</span><span class="n">pytorch</span><span class="p">:</span><span class="mf">2.5.1</span><span class="o">-</span><span class="n">cuda12</span><span class="mf">.4</span><span class="o">-</span><span class="n">cudnn9</span><span class="o">-</span><span class="n">devel</span>
+</div>
+<p><strong>Step 7. Start an Interactive Apptainer Shell</strong></p>
+<p>Once the image is downloaded, we can enter the Apptainer shell by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) something$ apptainer shell output.sif
 </pre></div>
 </div>
-<p>Flags:
--it -&gt; interactive terminal
-– rm -&gt; removes the container after exit.
-–gpus all -&gt; enable GPU access for CUDA-enabled containers</p>
-<p><strong>Step 8. Run a PyTorych Script Inside the Container</strong></p>
+<p>Now we are in our own isolated environment free to do whatever we would like with it.</p>
+<p><strong>Step 8. Testing it Out</strong></p>
 <blockquote>
-<div><p>Once inside the container, start Python</p>
+<div><p>Once inside the container, switch over to your $SCRATCH directory and install this script.</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) soemthing$ git clone https://github.com/pytorch/examples.git
+
+(base) something$ torchrun --nproc_per_node=4 examples/distributed/ddp-tutorial-series/multigpu_torchrun.py 50 10
 </pre></div>
 </div>
+<p><strong>Step 9: Verifying the Script Execution</strong>
+Once you’ve executed the script, you can check the output directly in your terminal. If there are any issues or errors, they will be displayed in the terminal.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>You have now successfully pulled a PyTorch image from Docker Hub, mounted local directories into the container, and run a Python script within an Apptainer container.</p>
+<p>For further help, refer to the official Apptainer documentation at:
+<a class="reference external" href="https://apptainer.org/docs">https://apptainer.org/docs</a></p>
+<p>First example, single node pytorch installation guide with just tacc machine
+Look at gabriels doc for differnt pytorch images</p>
+<p>Second example, build docker file on local, push to docker hub, pull onto tacc system</p>
 </section>
 </section>
 

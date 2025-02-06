@@ -17,27 +17,53 @@ For this guide's purposes, we will use MiniForge.
 Steps to Install Conda
 ----------------------
 1. **Download MiniForge**
-- Go to the MiniForge GitHub page. `https://github.com/conda-forge/miniforge/releases/latest`
-- Choose the Appropriate installer for your operating system:
+    - Go to the `MiniForge GitHub page. <https://github.com/conda-forge/miniforge/releases/latest>`_
+    - Choose the Appropriate installer for your operating system:
     
-    - Windows
-    - Mac
-    - Linux
+        - Windows
+        - Mac
+        - Linux
 
-2. **Install MiniForge**
-- Open your terminal or command prompt.
-Navigate to the directory where the installer was downloaded.
-- Run the installer command:
-    
-    - Mac/Linux: Use the terminal to run the installer:
-    
-    :: 
+2.  **Open a Terminal or Command Prompt**
+Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want use Mini-Forge.
 
-        bash Miniforge3-Linux-x86_64.sh  
+3. **Run the SSH Command**  
+Use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
 
-    - Windows: Double-click the .exe file and follow the on screen instructions
+:: 
 
-3. **Initialize Conda**
+    ssh <username>@<hostname>
+
+**Example:**
+To connect to the Frontera system:
+
+::
+
+    ssh username@frontera.tacc.utexas.edu
+
+**Enter Your Password**  
+When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.
+
+**Step 4: Set Up Two-Factor Authentication**  
+TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.
+
+.. note::
+   
+    It would be best to use the $WORK directory
+
+5. **Install MiniForge**
+    - Open your terminal or command prompt. Navigate to the directory where the installer was downloaded.
+    - Run the installer command:
+        
+        - Mac/Linux: Use the terminal to run the installer:
+        
+        :: 
+
+            bash Miniforge3-Linux-x86_64.sh  
+
+        - Windows: Double-click the .exe file and follow the on screen instructions
+
+6. **Initialize Conda**
    After installation, initialize Conda to configure your shell:
     
     ::
@@ -46,7 +72,7 @@ Navigate to the directory where the installer was downloaded.
 
     Restart your terminal for the changes to take effect.
 
-4. **Verify the Installation**
+7. **Verify the Installation**
     Confirm that Conda is installed by running:
     
     ::
@@ -86,10 +112,11 @@ Once Conda is installed, you can start creating and managing environments using 
         conda remove --name myenv --all
 
 For more information, visit the official Conda documentation:  
-`https://docs.conda.io/`
+`<https://docs.conda.io/>`_
 
 
 
 
 
 
+//you can add in a yaml file like with virtual environments, to help manage, make it kind of a note, point them to the documentation if you want

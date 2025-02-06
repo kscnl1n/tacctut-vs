@@ -108,31 +108,41 @@
 <li><p><strong>Open a Terminal or Command Prompt</strong>
 Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.</p></li>
 </ol>
+<p>2. <strong>Run the SSH Command</strong>
+Use the following command to connect to TACC systems (replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;@&lt;</span><span class="n">hostname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong>
+To connect to the Frontera system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@frontera</span><span class="o">.</span><span class="n">tacc</span><span class="o">.</span><span class="n">utexas</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p><strong>Enter Your Password</strong>
+When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.</p>
+<p><strong>Step 4: Set Up Two-Factor Authentication</strong>
+TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It would be best to use the $WORK directory</p>
 </div>
-<ol class="arabic" start="3">
-<li><dl class="simple">
-<dt><strong>Create the Virtual Environment</strong></dt><dd><p>Run this command to create a virtual environment. You can replace ‘myenv’ with whatever you want to name your virtual environment.</p>
-</dd>
-</dl>
+<dl>
+<dt><strong>Step 5. Create the Virtual Environment</strong></dt><dd><blockquote>
+<div><p>Run this command to create a virtual environment. You can replace ‘myenv’ with whatever you want to name your virtual environment.</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">myenv</span>
 </pre></div>
 </div>
-</li>
-</ol>
-<ol class="arabic" start="3">
-<li><p><strong>Verify the Creation</strong>
-After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p>
+</dd>
+<dt><strong>Step 6. Verify the Creation</strong></dt><dd><p>After running the command, a new directory (e.g., <cite>myenv</cite>) will be created in your current location. This directory contains the files needed for the virtual environment.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">UserName</span><span class="nd">@System</span> <span class="n">myenv</span> <span class="o">%</span> <span class="n">ls</span>
 <span class="nb">bin</span>             <span class="n">include</span>         <span class="n">lib</span>             <span class="n">pyvenv</span><span class="o">.</span><span class="n">cfg</span>
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-</ol>
+</dd>
+</dl>
 </section>
 <section id="understanding-the-structure">
 <h2>Understanding the Structure<a class="headerlink" href="#understanding-the-structure" title="Link to this heading"></a></h2>
