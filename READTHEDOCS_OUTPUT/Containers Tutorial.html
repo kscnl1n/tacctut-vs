@@ -90,13 +90,14 @@
              
   <section id="containers-tutorial">
 <h1>Containers Tutorial<a class="headerlink" href="#containers-tutorial" title="Link to this heading"></a></h1>
-<p>Docker is a platform for developing, shipping, and running applications inside containers. Containers are lightweight, portable, and ensure that applications run consistently across different environments.</p>
+<p>Docker is a platform for developing, shipping, and running applications inside containers. Containers are lightweight, portable, and ensure that applications run consistently across different environments. However, since we will be working on TACC’s HPC systems, this tutorial will be using Apptainer.</p>
 <section id="what-is-a-docker-image">
 <h2>What is a Docker Image?<a class="headerlink" href="#what-is-a-docker-image" title="Link to this heading"></a></h2>
 <p>A Docker image is a pre-configured package that contains everything needed to run an application, including the code, runtime, libraries, and dependencies. Once an image is instantiated, it becomes a container, which is an isolated runtime environment.</p>
 </section>
 <section id="apptainer-vs-container">
 <h2>Apptainer vs Container<a class="headerlink" href="#apptainer-vs-container" title="Link to this heading"></a></h2>
+<p>Apptainer (formerly Singularity) is a containerization platform designed specifically for high-performance computing (HPC) environments, offering a solution optimized for scientific research and large-scale data processing. Unlike general containers like Docker, which require root privileges and are commonly used for development and cloud-based applications, Apptainer is built to run efficiently on shared systems, such as TACC’s supercomputers and clusters. It provides portability, reproducibility, and seamless integration with HPC job schedulers making it ideal for researchers who need to run complex applications in secure, isolated environments without compromising performance or requiring administrative access.</p>
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
@@ -119,11 +120,12 @@ Apptainer runs Docker containers on HPC systems</p>
 <li><p><a class="reference external" href="https://docs.docker.com/desktop/setup/install/linux/">Linux</a></p></li>
 </ul>
 </div></blockquote>
-<p><strong>Step 2: SSH onto A TACC Machine</strong>
-Open your terminal and use the following command to connect to TACC systems (replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname):</p>
+<p><strong>Step 2: Run the SSH Command</strong>
+Use the following command to connect to TACC systems:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;@&lt;</span><span class="n">hostname</span><span class="o">&gt;</span>
 </pre></div>
 </div>
+<p>(replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname)</p>
 <p><strong>Example:</strong>
 To connect to the Frontera system:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@frontera</span><span class="o">.</span><span class="n">tacc</span><span class="o">.</span><span class="n">utexas</span><span class="o">.</span><span class="n">edu</span>
@@ -195,6 +197,7 @@ Once you’ve executed the script, you can check the output directly in your ter
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
 <p>You have now successfully pulled a PyTorch image from Docker Hub, mounted local directories into the container, and run a Python script within an Apptainer container.</p>
+<p>Special thanks to the Containers at TACC tutorial <a class="reference external" href="https://containers-at-tacc.readthedocs.io/en/latest/index.html">https://containers-at-tacc.readthedocs.io/en/latest/index.html</a></p>
 <p>For further help, refer to the official Apptainer documentation at:
 <a class="reference external" href="https://apptainer.org/docs">https://apptainer.org/docs</a></p>
 <p>First example, single node pytorch installation guide with just tacc machine

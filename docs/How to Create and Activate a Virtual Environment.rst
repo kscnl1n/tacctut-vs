@@ -14,12 +14,14 @@ Steps to Create a Virtual Environment
 1. **Open a Terminal or Command Prompt**
    Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want to create the virtual environment.
 
-2. **Run the SSH Command**  
-Use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
+**Step 2: Run the SSH Command**  
+Use the following command to connect to TACC systems:
 
 :: 
 
     ssh <username>@<hostname>
+
+(replace `<username>` with your TACC username and `<hostname>` with the system hostname)
 
 **Example:**
 To connect to the Frontera system:

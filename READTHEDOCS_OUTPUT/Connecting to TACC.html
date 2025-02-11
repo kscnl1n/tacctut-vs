@@ -96,7 +96,7 @@
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt><strong>TACC Account</strong></dt><dd><ul class="simple">
-<li><p>If you haven’t yet, create a TACC account <cite>here &lt;https://tacc.utexas.edu/portal/login?from=/portal/&gt;</cite>.</p></li>
+<li><p>If you haven’t yet, create a TACC account <a class="reference external" href="https://tacc.utexas.edu/portal/login?from=/portal/">here</a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -105,6 +105,7 @@
 <dt><strong>SSH Client</strong></dt><dd><ul class="simple">
 <li><p><strong>Linux/macOS</strong>: Use the built-in terminal.</p></li>
 <li><p><strong>Windows</strong>: Use Windows Terminal.</p></li>
+<li><p><strong>Misc.</strong>: VS Code, etc.</p></li>
 </ul>
 </dd>
 </dl>
@@ -113,18 +114,13 @@
 </section>
 <section id="id1">
 <h2>Connecting to TACC<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
-<dl class="simple">
-<dt><strong>Step 1: Open Your Terminal</strong></dt><dd><ul class="simple">
-<li><p>On Linux/macOS, open the built-in terminal.</p></li>
-<li><p>On Windows, open your Windows Terminal.</p></li>
-</ul>
-</dd>
-</dl>
+<p><strong>Step 1: Open Your Terminal of Choice</strong></p>
 <p><strong>Step 2: Run the SSH Command</strong>
-Use the following command to connect to TACC systems (replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname):</p>
+Use the following command to connect to TACC systems:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;@&lt;</span><span class="n">hostname</span><span class="o">&gt;</span>
 </pre></div>
 </div>
+<p>(replace <cite>&lt;username&gt;</cite> with your TACC username and <cite>&lt;hostname&gt;</cite> with the system hostname)</p>
 <p><strong>Example:</strong>
 To connect to the Frontera system:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@frontera</span><span class="o">.</span><span class="n">tacc</span><span class="o">.</span><span class="n">utexas</span><span class="o">.</span><span class="n">edu</span>
@@ -144,15 +140,16 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 </section>
 <section id="directories-explained">
 <h2>Directories Explained<a class="headerlink" href="#directories-explained" title="Link to this heading"></a></h2>
+<p>While working on TACC systems, there are 3 main directories that users will utilize. $HOME, $WORK, and $SCRATCH.</p>
 <dl class="simple">
-<dt>While working on TACC systems, there are 3 main directories that users will utilize. $HOME, $WORK, and $SCRATCH. Understanding the difference between the three are quite simple:</dt><dd><ul class="simple">
-<li><p>$HOME: Useful for projects needing small environments as $HOME does not have much storage</p></li>
-<li><p>$WORK: Useful for general projects …continue</p></li>
-<li><p>$SCRATCH: Useful for work that may be discarded as this directory may get purged</p></li>
+<dt>Understanding the difference between the three are quite simple:</dt><dd><ul class="simple">
+<li><p><strong>$HOME</strong>: Useful for projects needing small environments as $HOME does not have much storage. It’s typically used for personal scripts, configuration files, and other small files that you want to persist over time.</p></li>
+<li><p><strong>$WORK</strong>: Useful for general projects that require more storage and can be considered semi-persistent. This directory is designed for active data or ongoing work that needs more space than $HOME, but is not temporary. Files here are not as likely to be purged, but users should still manage space appropriately.</p></li>
+<li><p><strong>$SCRATCH</strong>: Useful for work that may be discarded, as this directory may get purged after a certain period. $SCRATCH is ideal for temporary files, large datasets, or computational outputs that do not need to be preserved. This space is designed for jobs in progress or interim work that will be cleaned up automatically to avoid storage overflow.</p></li>
 </ul>
 </dd>
 </dl>
-<p>However, a potential issue with $WORK is that is you have a very large environment…continue</p>
+<p>However, a potential issue with $WORK is that is you have a very large environment…continue this in conda’s section to talk about being careful on where to install and work on projects ??</p>
 </section>
 <section id="extra-information">
 <h2>Extra information<a class="headerlink" href="#extra-information" title="Link to this heading"></a></h2>

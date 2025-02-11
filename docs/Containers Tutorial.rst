@@ -1,7 +1,7 @@
 Containers Tutorial
 ===================
 
-Docker is a platform for developing, shipping, and running applications inside containers. Containers are lightweight, portable, and ensure that applications run consistently across different environments.
+Docker is a platform for developing, shipping, and running applications inside containers. Containers are lightweight, portable, and ensure that applications run consistently across different environments. However, since we will be working on TACC's HPC systems, this tutorial will be using Apptainer.
 
 What is a Docker Image?
 -----------------------
@@ -9,6 +9,7 @@ A Docker image is a pre-configured package that contains everything needed to ru
 
 Apptainer vs Container
 ----------------------
+Apptainer (formerly Singularity) is a containerization platform designed specifically for high-performance computing (HPC) environments, offering a solution optimized for scientific research and large-scale data processing. Unlike general containers like Docker, which require root privileges and are commonly used for development and cloud-based applications, Apptainer is built to run efficiently on shared systems, such as TACC’s supercomputers and clusters. It provides portability, reproducibility, and seamless integration with HPC job schedulers making it ideal for researchers who need to run complex applications in secure, isolated environments without compromising performance or requiring administrative access.
 
 Prerequisites
 -------------
@@ -29,12 +30,14 @@ Apptainer runs Docker containers on HPC systems
     - `Linux <https://docs.docker.com/desktop/setup/install/linux/>`_
 
 
-**Step 2: SSH onto A TACC Machine**  
-Open your terminal and use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
+**Step 2: Run the SSH Command**  
+Use the following command to connect to TACC systems:
 
 :: 
 
     ssh <username>@<hostname>
+
+(replace `<username>` with your TACC username and `<hostname>` with the system hostname)
 
 **Example:**
 To connect to the Frontera system:
@@ -132,8 +135,10 @@ Conclusion
 ----------
 You have now successfully pulled a PyTorch image from Docker Hub, mounted local directories into the container, and run a Python script within an Apptainer container.
 
+Special thanks to the Containers at TACC tutorial `<https://containers-at-tacc.readthedocs.io/en/latest/index.html>`_
+
 For further help, refer to the official Apptainer documentation at: 
-https://apptainer.org/docs
+`<https://apptainer.org/docs>`_
 
 
 

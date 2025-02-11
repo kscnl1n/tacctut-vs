@@ -16,7 +16,7 @@ For this guide's purposes, we will use MiniForge.
 
 Steps to Install Conda
 ----------------------
-1. **Download MiniForge**
+**Step 1. Download MiniForge**
     - Go to the `MiniForge GitHub page. <https://github.com/conda-forge/miniforge/releases/latest>`_
     - Choose the Appropriate installer for your operating system:
     
@@ -24,15 +24,17 @@ Steps to Install Conda
         - Mac
         - Linux
 
-2.  **Open a Terminal or Command Prompt**
+**Step 2. Open a Terminal or Command Prompt**
 Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want use Mini-Forge.
 
-3. **Run the SSH Command**  
-Use the following command to connect to TACC systems (replace `<username>` with your TACC username and `<hostname>` with the system hostname):
+**Step 3: Run the SSH Command**  
+Use the following command to connect to TACC systems:
 
 :: 
 
     ssh <username>@<hostname>
+
+(replace `<username>` with your TACC username and `<hostname>` with the system hostname)
 
 **Example:**
 To connect to the Frontera system:
@@ -51,7 +53,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
    
     It would be best to use the $WORK directory
 
-5. **Install MiniForge**
+**Step 5. Install MiniForge**
     - Open your terminal or command prompt. Navigate to the directory where the installer was downloaded.
     - Run the installer command:
         
@@ -63,7 +65,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 
         - Windows: Double-click the .exe file and follow the on screen instructions
 
-6. **Initialize Conda**
+**Step 6. Initialize Conda**
    After installation, initialize Conda to configure your shell:
     
     ::
@@ -72,7 +74,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 
     Restart your terminal for the changes to take effect.
 
-7. **Verify the Installation**
+**Step 7. Verify the Installation**
     Confirm that Conda is installed by running:
     
     ::
@@ -111,6 +113,75 @@ Once Conda is installed, you can start creating and managing environments using 
         
         conda remove --name myenv --all
 
+
+
+Lets Install PyTorch
+--------------------
+Now that we have Conda installed, lets try installing PyTorch
+
+**Step 1. Create a Conda Enviornment**
+
+::
+
+    conda create --name pytorch_env python=3.10
+
+Activate the environment
+
+::
+
+    conda activate pytorch_env
+
+**Step 2: Install PyTorch**
+
+::
+
+    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+
+
+Explanations:
+
+- pytorch is the main library.
+
+- torchvision provides utilities for computer vision tasks.
+
+- torchaudio is for audio-related tasks.
+
+- the link is a CUDA GPU specific version for our HPC purposes
+
+**Optional: Manage Your Dependencies Using a YAML File**
+
+If you would like, you can manage your Conda environments using a YAML file, which helps ensure consistency across different systems.
+
+**Step 1. Create a YAML File**
+
+::
+
+    conda env create -f environment.yml
+
+
+**Step 2. Add your environmetn to your YAML File**
+
+::
+
+    name: pytorch_env
+    channels:
+        - pytorch
+        - defaults
+    dependencies:
+        - python=3.10
+        - pytorch
+        - torchvision
+        - torchaudio
+        - cudatoolkit=12.6
+
+**Step .3 Export Your Current Environtment**
+
+::
+    
+    conda env export > environment.yml
+
+
+
 For more information, visit the official Conda documentation:  
 `<https://docs.conda.io/>`_
 
@@ -118,5 +189,6 @@ For more information, visit the official Conda documentation:
 
 
 
-
 //you can add in a yaml file like with virtual environments, to help manage, make it kind of a note, point them to the documentation if you want
+
+//show them your own yaml file, explain more on why we use this if they need it
