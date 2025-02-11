@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Container Build with Pytorch &mdash; AI/ML TACC Introduction  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Containerized Kernel for Jupyter Notebooks" href="Containerized%20Kernel%20for%20Jupyter%20Notebooks.html" />
+    <link rel="prev" title="Lets Get Advanced" href="Lets%20Get%20Advanced.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AI/ML TACC Introduction
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Getting%20Started%20Section/Getting%20Started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Lets%20Get%20Advanced.html">Lets Get Advanced</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Container Build with Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bert-classifier-code-requirements">BERT classifier code requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pytorch-install-command">Pytorch install command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-a-dockerfile">Writing a Dockerfile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Containerized%20Kernel%20for%20Jupyter%20Notebooks.html">Containerized Kernel for Jupyter Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Conda%20Tips%20Section/Conda%20Tips%20and%20Tricks.html">Conda Tips and Tricks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AI/ML TACC Introduction</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Lets%20Get%20Advanced.html">Lets Get Advanced</a></li>
+      <li class="breadcrumb-item active">Advanced Container Build with Pytorch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Lets Get Advanced Section/Advanced Container Build with Pytorch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-container-build-with-pytorch">
+<h1>Advanced Container Build with Pytorch<a class="headerlink" href="#advanced-container-build-with-pytorch" title="Link to this heading"></a></h1>
+<p>The following tutorial walks through the steps for building a container to run the BERT classifier python script that is used in Erik’s containers tutorial.</p>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Figure out which CUDA, pytorch, python version, and which additional python packages you need</p></li>
+<li><p>Get a docker image with the CUDA version you want</p></li>
+<li><p>Build a docker container on top of this image with the python, pytorch, and other packages you need</p></li>
+<li><p>Upload container to dockerhub and then download it onto frontera and convert it to an apptainer container</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="bert-classifier-code-requirements">
+<h2>BERT classifier code requirements<a class="headerlink" href="#bert-classifier-code-requirements" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>We want to run the code contained in the bert-classifier.py script.  This code requires:</p></li>
+<li><p>CUDA 11.0</p></li>
+<li><p>Python 10</p></li>
+<li><p>pytorch 1.7.1</p></li>
+</ul>
+</div></blockquote>
+<p>Additional required python packages listed in requirements.txt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seaborn</span> <span class="o">==</span> <span class="mf">0.11.2</span>
+<span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="o">==</span> <span class="mf">0.24.2</span>
+<span class="n">scipy</span> <span class="o">==</span> <span class="mf">1.7.1</span>
+<span class="n">tokenizers</span> <span class="o">==</span> <span class="mf">0.20.3</span>
+<span class="n">torchtext</span> <span class="o">&gt;=</span> <span class="mf">0.8.1</span>
+<span class="n">transformers</span> <span class="o">==</span> <span class="mf">4.16.2</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>It also requires the following data files:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/eriksf/bert-classifier/raw/main/train.csv">train.csv</a></p></li>
+<li><p><a class="reference external" href="https://github.com/eriksf/bert-classifier/raw/main/test.csv">test.csv</a></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/eriksf/bert-classifier/main/valid.csv">valid.csv</a></p></li>
+</ul>
+<p>Selecting a CUDA docker image to build from
+Once you know which version of CUDA you need, you can find a docker image from <a class="reference external" href="https://hub.docker.com/r/nvidia/cuda">nvidia’s dockerhub page</a> that has the correct CUDA version.  Their CUDA images come in three flavors, base, runtime, and development:</p>
+<p>The image tag syntax is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">CUDA</span> <span class="n">version</span> <span class="c1">#]-[optional cudnn]-[base/runtime/devel]-[os version]</span>
+</pre></div>
+</div>
+<p>As an example, the CUDA 11.0.3 runtime image with cuDNN has the tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">11.0.3</span><span class="o">-</span><span class="n">cudnn8</span><span class="o">-</span><span class="n">runtime</span>
+</pre></div>
+</div>
+<section id="pytorch-install-command">
+<h3>Pytorch install command<a class="headerlink" href="#pytorch-install-command" title="Link to this heading"></a></h3>
+<p>The pytorch website provides a useful app here that will tell you the correct pip install command for the latest or the nightly build of pytorch for various platforms and OS’s.  The “Compute Platform” row at the above link will tell you which CUDA versions are compatible with the stable and nightly pytorch versions.  Explanations of how to install older versions of pytorch can be found on their website here. For the latest stable pytorch release their website recommends you to use python 3.9-3.12.</p>
+<p>The pytorch version we want can be found in the “older versions” section of the website.  Scrolling down to v1.7.1 look for the “wheel” section that provides the pip install command for Linux/Windows for CUDA 11.  The command is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.7.1</span><span class="o">+</span><span class="n">cu110</span> <span class="n">torchvision</span><span class="o">==</span><span class="mf">0.8.2</span><span class="o">+</span><span class="n">cu110</span> <span class="n">torchaudio</span><span class="o">==</span><span class="mf">0.7.2</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch_stable</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-a-dockerfile">
+<h3>Writing a Dockerfile<a class="headerlink" href="#writing-a-dockerfile" title="Link to this heading"></a></h3>
+<p>Now we can put everything together and build our container. The general process is that we use the FROM command to start with the nvidia CUDA container, then a series of RUN commands to install python and then perform pip installs of the desired python packages. Finally, we will copy in our script and data files into the container.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Lets%20Get%20Advanced.html" class="btn btn-neutral float-left" title="Lets Get Advanced" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Containerized%20Kernel%20for%20Jupyter%20Notebooks.html" class="btn btn-neutral float-right" title="Containerized Kernel for Jupyter Notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Texas Advanced Computing Center.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -27,5 +27,6 @@ Who Is This For?
    :maxdepth: 2
    :caption: Content:
 
-   Getting Started
-   Lets Get Advanced
+   Getting Started Section/Getting Started
+   Lets Get Advanced Section/Lets Get Advanced
+   Conda Tips Section/Conda Tips and Tricks

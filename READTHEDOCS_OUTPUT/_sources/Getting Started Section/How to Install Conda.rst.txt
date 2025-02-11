@@ -148,7 +148,7 @@ Explanations:
 
 - the link is a CUDA GPU specific version for our HPC purposes
 
-**Optional: Manage You Dependencies Using a YAML File**
+**Optional: Manage Your Dependencies Using a YAML File**
 
 If you would like, you can manage your Conda environments using a YAML file, which helps ensure consistency across different systems.
 
@@ -190,3 +190,5 @@ For more information, visit the official Conda documentation:
 
 
 //you can add in a yaml file like with virtual environments, to help manage, make it kind of a note, point them to the documentation if you want
+
+//show them your own yaml file, explain more on why we use this if they need it
