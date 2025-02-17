@@ -147,7 +147,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <dt>Understanding the difference between the three are quite simple:</dt><dd><ul class="simple">
 <li><p><strong>$HOME</strong>: Useful for projects needing small environments as $HOME does not have much storage. It’s typically used for personal scripts, configuration files, and other small files that you want to persist over time.</p></li>
 <li><p><strong>$WORK</strong>: Useful for general projects that require more storage and can be considered semi-persistent. This directory is designed for active data or ongoing work that needs more space than $HOME, but is not temporary. Files here are not as likely to be purged, but users should still manage space appropriately.</p></li>
-<li><p><strong>$SCRATCH</strong>: Useful for work that may be discarded, as this directory may get purged after a certain period. $SCRATCH is ideal for temporary files, large datasets, or computational outputs that do not need to be preserved. This space is designed for jobs in progress or interim work that will be cleaned up automatically to avoid storage overflow.</p></li>
+<li><p><strong>$SCRATCH</strong>: Useful for work that may be discarded, as this directory is purged after 10 days. $SCRATCH is ideal for temporary files, large datasets, or computational outputs that do not need to be preserved. This space is designed for jobs in progress or interim work that will be cleaned up automatically to avoid storage overflow.</p></li>
 </ul>
 </dd>
 </dl>
