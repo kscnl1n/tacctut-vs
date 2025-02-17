@@ -185,6 +185,22 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <p><b>It is important to avoid running tasks on the login nodes,</b> because this is where users will be waiting to queue their tasks. By running tasks on these login nodes, you’ll be taking a lot of computational resources away from users who are logging onto the system, and can affect the amount of time they will be waiting in the queue.</p>
 <p>Each system has different kinds of nodes with different specifications for each, so if you want to understand how to fully utilize each system, you can find their documentation <a href="https://tacc.utexas.edu/systems/all/">here</a>.</p>
 
+<h2>Requesting a Specific Node</h2>
+<p><b>Why Request a Specific Node?</b></p>
+<p>Many TACC systems have both CPU and GPU nodes available to use. Matching your workload to the required hardware can help optimize compute time and take advantage of specific resources that your software might run on exclusively. (ex: how <b>cuda</b> exclusively runs on GPU hardware).</p>
+
+<h3>Requesting a node through the TACC Analysis Portal</h3>
+<p>There are multiple ways to request a node on the TACC systems. The easiest method of doing so would be from the tacc analysis portal if you are using Frontera, Stampede3, Lone Star 6, or Vista:
+<a href="https://tap.tacc.utexas.edu/">https://tap.tacc.utexas.edu/</a></p>
+<p>Ensure you have a TACC user account before attempting to use the analysis portal. Steps to register for one can be found <a href="https://accounts.tacc.utexas.edu/begin">here</a>.</p>
+<p>When you have successfully created and logged into your account, when you click on the tap.tacc.utexas.edu link, you should end up here:</p>
+<img src="\READTHEDOCS_OUTPUT\_static\tap1.png">
+<p>We will select Lone Star 6 as the system, DCV remote desktop as our application, and OTH 24002 as our project. </p>
+<img src="\READTHEDOCS_OUTPUT\_static\tap2.png">
+<p>The <b>queue</b> option will determine which type of node you are on. Here you can see what queues are for development and which are for GPUs. This queue option will differ depending on the system you are using and the nodes that are available on that system.</p>
+<p>You can also choose the <b>amount</b> of nodes you may need for your task, as well as the time limit your job will have.</p>
+<img src="\READTHEDOCS_OUTPUT\_static\tap3.png">
+<p><i>*It is recommended to leave the number of nodes used to 1, unless more are necessary, to avoid taking resources away from others.</i></p>
 
 
 </section>
