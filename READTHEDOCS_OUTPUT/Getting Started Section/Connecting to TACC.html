@@ -174,7 +174,19 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <h2>Extra information<a class="headerlink" href="#extra-information" title="Link to this heading"></a></h2>
 <p>For more information, visit the official TACC documentation:
 <a class="reference external" href="https://www.tacc.utexas.edu/user-services/user-guides/">https://www.tacc.utexas.edu/user-services/user-guides/</a></p>
-<p>Now we should request a Node to work on. You can do this by</p>
+<p>Now we should request a <b>node</b> to work on.</p>
+
+<h2>What is a Node?</h2>
+<p>In a supercomputer, a node is usually a single computer or server in a cluster. A node on one of the TACC systems refers to an individual processor. Most of our systems are composed of <b>compute</b> nodes (for running tasks) and <b>login</b> nodes (for directing users and tasks towards the compute nodes).</p>
+<p>In a typical HPC system, there are many more compute nodes than login nodes:</p>
+
+<img src="\READTHEDOCS_OUTPUT\_static\hpc-schematic.jpg" alt="HPC System Structure">
+<p><i>Node architecture of a typical HPC system. Image Source:</i><a href="https://ekatsevi.github.io/statistical-computing/hpc-basics.html#:~:text=Login%20nodes%20are%20like%20a,the%20workhorses%20of%20the%20HPC">https://ekatsevi.github.io/statistical-computing/hpc-basics.html#:~:text=Login%20nodes%20are%20like%20a,the%20workhorses%20of%20the%20HPC</a></p>
+<p><b>It is important to avoid running tasks on the login nodes,</b> because this is where users will be waiting to queue their tasks. By running tasks on these login nodes, you’ll be taking a lot of computational resources away from users who are logging onto the system, and can affect the amount of time they will be waiting in the queue.</p>
+<p>Each system has different kinds of nodes with different specifications for each, so if you want to understand how to fully utilize each system, you can find their documentation <a href="https://tacc.utexas.edu/systems/all/">here</a>.</p>
+
+
+
 </section>
 </section>
 
