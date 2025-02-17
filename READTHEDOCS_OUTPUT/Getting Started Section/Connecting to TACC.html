@@ -151,8 +151,25 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 </ul>
 </dd>
 </dl>
-<p>However, a potential issue with $WORK is that is you have a very large environment…continue this in conda’s section to talk about being careful on where to install and work on projects ??</p>
+<p>The $WORK environment is different from the $SCRATCH and $HOME environments because it is mounted on the <b>global shared file system</b> hosted on <b>Stockyard</b>–meaning it is available on Frontera, Stampede3, and most of the other HPC systems available</p>
+<p>through TACC. $WORK is the highest directory on a global shared file system between several different HPC systems for ease of access between machines. The directory is as follows:</p>
+<img src="\READTHEDOCS_OUTPUT\_static\stockyard-2022.jpg" alt="File System">
+<p><i>Image source:</i> <a href="https://docs.tacc.utexas.edu/hpc/lonestar6/#files">https://docs.tacc.utexas.edu/hpc/lonestar6/#files</a></p>
+
+<p>However, because work is such a large environment shared between so many users, the following problems may emerge:</p>
+<ul class="simple">
+<li><p><b>Constraints on Shared Resources</b> - Because so many users are running jobs on $WORK, high-intensity Input/Output (I/O) operations may cause performance bottlenecks and contention between users.</p></li>
+  <li><ul><li><b>One method of solving this is to run high I/O operations in the $SCRATCH directory,</b> created for the specific purpose of not overloading the $WORK directory, and moving output files into $WORK.</li></ul></li>
+<li><p><b>Striping</b> - the $WORK file system has 24 I/O targets available, and stripe count should be adjusted accordingly. It is generally advised to allocate at least one stripe for every 100 GB of file size, not exceeding 75% of available stripes.</p></li>
+</ul>
+
+<h2>Working with Conda and Other ML Environments</h2>
+<p>ML/AI tasks on TACC systems can require heavy resource utilization (for example, package installations and lookups, environment creation, etc.), and may lead to contention with other users. Additionally, since $WORK utilizes Lustre striping, performance is optimized for large files but can be inefficient for Conda environments, which contain thousands of small files.</p>
+
+<p>Additional information about running Conda on TACC systems can be found in <a href="\READTHEDOCS_OUTPUT\Getting Started Section\How to Install Conda.html"><b>How to Install Conda</b></a>, but for now, it is advisable to run Conda in the $SCRATCH environment due to its high I/O load.</p>
+
 </section>
+
 <section id="extra-information">
 <h2>Extra information<a class="headerlink" href="#extra-information" title="Link to this heading"></a></h2>
 <p>For more information, visit the official TACC documentation:
