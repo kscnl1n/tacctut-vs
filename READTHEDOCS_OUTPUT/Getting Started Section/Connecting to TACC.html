@@ -202,6 +202,24 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <img src="\READTHEDOCS_OUTPUT\_static\tap3.png">
 <p><i>*It is recommended to leave the number of nodes used to 1, unless more are necessary, to avoid taking resources away from others.</i></p>
 
+<!-- I wanted to go more in-depth about how to SSH and request a node with SLURM but I'm afraid it makes the page too lengthy
+ What do you think? -Kaylee -->
+<h3>Requesting a node through SBATCH</h3>
+<p>TACC’s file systems utilize a cluster and workload manager system called SLURM (Simple Linux Utility for Resource Management), which assigns users compute nodes and manages the queue for impending jobs. You can submit a <b>job</b> to a <b>queu</b> without using TAP by running the SLURM command <b>SBATCH</b>. It is helpful to have prior knowledge of Linux before working through the command line.</p>
+<p>Like through the TAP analysis portal, you must also get onto a ‘queue’ (also known as a <b>partition</b>) for any node you would like to use. Because the amount of tasks being run on TACC systems is always changing, <b>there is no guarantee for the wait time on any specific kind of node.</b> Additionally, each HPC system has its own file and partition structures, meaning that it is best to look through the documentation for each system if you want to run a task on a specific kind of node.</p>
+<p><b>General SBATCH Walkthrough:</b></p>
+<p><a href="https://docs.tacc.utexas.edu/hpc/stampede3/#running-sbatch">https://docs.tacc.utexas.edu/hpc/stampede3/#running-sbatch</a></p>
+<p><b>System-Specific Walkthroughs:</b></p>
+<ul>
+  <li><b>Lone Star 6</b> - <a href="https://docs.tacc.utexas.edu/hpc/lonestar6/">https://docs.tacc.utexas.edu/hpc/lonestar6/</a></li>
+  <li><b>Frontera</b> - <a href="https://docs.tacc.utexas.edu/hpc/frontera/#queues">https://docs.tacc.utexas.edu/hpc/frontera/#queues</a></li>
+  <li><b>Vista</b> - <a href="https://docs.tacc.utexas.edu/hpc/vista/#running">https://docs.tacc.utexas.edu/hpc/vista/#running</a></li>
+</ul>
+
+<h3>Requesting a node through idev</h3>
+<p>Another way to do this is through idev, the interactive development environment for TACC systems: <a href="https://docs.tacc.utexas.edu/software/idev/">https://docs.tacc.utexas.edu/software/idev/</a></p>
+<p>Idev creates a software environment that allows you to work on code and submit jobs in real-time. HPC systems are best-suited for running large jobs, but are ill-suited for the debugging and deployment work software development requires. The idev app allows users who want to quickly compile and run simple jobs on compute nodes a way to do this.</p>
+<p></p>
 
 </section>
 </section>
