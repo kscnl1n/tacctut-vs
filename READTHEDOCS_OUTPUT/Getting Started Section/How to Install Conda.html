@@ -124,6 +124,14 @@ For this guide’s purposes, we will use MiniForge.</p>
 </ul>
 </dd>
 </dl>
+
+<p>Upon opening the Github installations repo, you should see the installations available here: </p>
+<img src="\READTHEDOCS_OUTPUT\_static\miniforge-installations.png" alt="Installations">
+<p>You will want to click on the download file specific to your local machine, because we'll be using a local installation to install it onto the system we'll SSH into. </p>
+
+<p>When you open the installer file, the following installation window should pop up. Follow instructions:</p>
+<img src="\READTHEDOCS_OUTPUT\_static\miniforge-installer.png" alt="Installation window" height="75%" width="75%">
+
 <p><strong>Step 2. Open a Terminal or Command Prompt</strong>
 Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want use Mini-Forge.</p>
 <p><strong>Step 3: Run the SSH Command</strong>
@@ -145,6 +153,14 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <p class="admonition-title">Note</p>
 <p>It would be best to use the $WORK directory</p>
 </div>
+
+<p>NOTE: Conda can create virtual environments, meaning you do not need to install it within a virtual environment, but it is highly advised you install it on the $WORK directory.</p>
+<p><ul>
+  <li>Although in terms of I/O, <b>$SCRATCH</b> is actually the best place to install Conda and run subsequent tasks, files in this directory are routinely purged to save space. If you choose to install Conda in $SCRATCH, understand that you may have to re-install every so often.</li>
+  <li><i>*Ensure any output is bundled into a .tar file and moved into $WORK if using Conda for a high I/O task in $SCRATCH.</i></li>
+  <li><b>Placing Conda in $WORK is the best possible environment because it has enough storage capacity for Conda’s precompiled packages (NumPy, Tensorflow, etc.) but is not regularly purged.</b></li>
+</ul></p>
+
 <dl>
 <dt><strong>Step 5. Install MiniForge</strong></dt><dd><ul>
 <li><p>Open your terminal or command prompt. Navigate to the directory where the installer was downloaded.</p></li>
@@ -214,7 +230,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 </ol>
 </section>
 <section id="lets-install-pytorch">
-<h2>Lets Install PyTorch<a class="headerlink" href="#lets-install-pytorch" title="Link to this heading"></a></h2>
+<h2>Let's Install PyTorch<a class="headerlink" href="#lets-install-pytorch" title="Link to this heading"></a></h2>
 <p>Now that we have Conda installed, lets try installing PyTorch</p>
 <p><strong>Step 1. Create a Conda Enviornment</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">pytorch_env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.10</span>
@@ -236,12 +252,12 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <li><p>the link is a CUDA GPU specific version for our HPC purposes</p></li>
 </ul>
 <p><strong>Optional: Manage Your Dependencies Using a YAML File</strong></p>
-<p>If you would like, you can manage your Conda environments using a YAML file, which helps ensure consistency across different systems.</p>
+<p>If you would like, you can manage your Conda environments using a YAML file, which helps ensure consistency across different systems and redistribute environments.</p>
 <p><strong>Step 1. Create a YAML File</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
-<p><strong>Step 2. Add your environmetn to your YAML File</strong></p>
+<p><strong>Step 2. Add your environment to your YAML File</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">pytorch_env</span>
 <span class="n">channels</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">pytorch</span>
