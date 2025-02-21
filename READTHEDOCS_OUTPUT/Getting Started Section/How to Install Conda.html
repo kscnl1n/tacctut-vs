@@ -110,31 +110,11 @@ For this guide’s purposes, we will use MiniForge.</p>
 <section id="steps-to-install-conda">
 <h2>Steps to Install Conda<a class="headerlink" href="#steps-to-install-conda" title="Link to this heading"></a></h2>
 <dl>
-<dt><strong>Step 1. Download MiniForge</strong></dt><dd><ul>
-<li><p>Go to the <a class="reference external" href="https://github.com/conda-forge/miniforge/releases/latest">MiniForge GitHub page.</a></p></li>
-<li><p>Choose the Appropriate installer for your operating system:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Windows</p></li>
-<li><p>Mac</p></li>
-<li><p>Linux</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
 
-<p>Upon opening the Github installations repo, you should see the installations available here: </p>
-<img src="\READTHEDOCS_OUTPUT\_static\miniforge-installations.png" alt="Installations">
-<p>You will want to click on the download file specific to your local machine, because we'll be using a local installation to install it onto the system we'll SSH into. </p>
 
-<p>When you open the installer file, the following installation window should pop up. Follow instructions:</p>
-<img src="\READTHEDOCS_OUTPUT\_static\miniforge-installer.png" alt="Installation window" height="75%" width="75%">
-
-<p><strong>Step 2. Open a Terminal or Command Prompt</strong>
-Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want use Mini-Forge.</p>
-<p><strong>Step 3: Run the SSH Command</strong>
+<p><strong>Step 1. Open a Terminal or Command Prompt</strong>
+<p>Open the terminal (or Command Prompt on Windows), SSH onto a TACC machine, and navigate to the directory where you want use Mini-Forge.</p>
+<p><strong>Step 2: Run the SSH Command</strong>
 Use the following command to connect to TACC systems:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">&lt;username&gt;</span><span class="o">&gt;@&lt;</span><span class="n">hostname</span><span class="o">&gt;</span>
 </pre></div>
@@ -147,11 +127,11 @@ To connect to the Frontera system:</p>
 </div>
 <p><strong>Enter Your Password</strong>
 When prompted, type your TACC password. If this is your first time logging in, you may be required to set up or reset your password.</p>
-<p><strong>Step 4: Set Up Two-Factor Authentication</strong>
+<p><strong>Step 3: Set Up Two-Factor Authentication</strong>
 TACC systems require two-factor authentication. Follow the on-screen prompts to complete the process.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It would be best to use the $WORK directory</p>
+<p>It is best practice to use the $WORK directory.</p>
 </div>
 
 <p>NOTE: Conda can create virtual environments, meaning you do not need to install it within a virtual environment, but it is highly advised you install it on the $WORK directory.</p>
@@ -162,7 +142,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 </ul></p>
 
 <dl>
-<dt><strong>Step 5. Install MiniForge</strong></dt><dd><ul>
+<dt><strong>Step 4. Install MiniForge</strong></dt><dd><ul>
 
 <p>Miniforge is a mini Conda installer that we can use as an alternative to Anaconda and Miniconda. We will be using it to download Conda into the $WORK directory.</p>
 <p>SSH into the system of your choice and navigate into the $WORK directory.</p>
@@ -198,7 +178,14 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <p>Run the following command in your terminal:</p>
 <p>(You may also use <b>wget</b> if you prefer).</p>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl -LO https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh</span></pre></div></div>
-<p><i>*This download pulls it directly from the github link for the Linux architecture, which is what our systems use. If you follow this tutorial to install it on a local machine, you will need to change the URL to the installation file containing Miniforge for your system, which can be found in the same repo.</i></p>
+
+<div class="admonition note">
+  <p class="admonition-title">Note</p>
+  <p><p><i>*This download pulls it directly from the github link for the Linux architecture, which is what our systems use. If you follow this tutorial to install it on a local machine, you will need to change the URL to the installation file containing Miniforge for your system, which can be found in the same repo.</i></p>
+  <p><b>The repository containing all installation packages for Miniforge can be found here:</b></p>
+  <p><a href="https://github.com/conda-forge/miniforge/releases">https://github.com/conda-forge/miniforge/releases</a></p></p>
+</div>
+
 
 <p>Now make the execution script executable with <b>chmod</b>, which modifies file permissions so that we can execute <b>(+x)</b> the file:</p>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span>chmod +x Miniforge3-Linux-x86_64.sh</span><span class="n"></span></pre></div></div>
@@ -218,7 +205,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 
 <p>After running the bash script, it will ask you to <b>update your shell profile to automatically initialize conda.</b> Type <b>‘yes’.</b></p>
 
-<dt><strong>Step 6. Initialize Conda</strong></dt><dd><p>After installation, initialize Conda to configure your shell:</p>
+<dt><strong>Step 5. Initialize Conda</strong></dt><dd><p>After installation, initialize Conda to configure your shell:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">init</span>
 </pre></div>
@@ -226,7 +213,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 <p>Restart your terminal for the changes to take effect.</p>
 </div></blockquote>
 </dd>
-<dt><strong>Step 7. Verify the Installation</strong></dt><dd><p>Confirm that Conda is installed by running:</p>
+<dt><strong>Step 6. Verify the Installation</strong></dt><dd><p>Confirm that Conda is installed by running:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
@@ -280,7 +267,7 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 </pre></div>
 </div>
 <p><strong>Step 2: Install PyTorch</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu126</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">torch==2.4.1</span> <span class="n">torchvision==0.17.1</span> <span class="n">torchaudio==2.4.1</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu126</span>
 </pre></div>
 </div>
 <p>Explanations:</p>
