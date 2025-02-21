@@ -163,22 +163,61 @@ TACC systems require two-factor authentication. Follow the on-screen prompts to 
 
 <dl>
 <dt><strong>Step 5. Install MiniForge</strong></dt><dd><ul>
-<li><p>Open your terminal or command prompt. Navigate to the directory where the installer was downloaded.</p></li>
-<li><p>Run the installer command:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Mac/Linux: Use the terminal to run the installer:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniforge3</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
+
+<p>Miniforge is a mini Conda installer that we can use as an alternative to Anaconda and Miniconda. We will be using it to download Conda into the $WORK directory.</p>
+<p>SSH into the system of your choice and navigate into the $WORK directory.</p>
+<p><b>When you SSH into Frontera, you should see something like this:</b></p>
+<img src="\READTHEDOCS_OUTPUT\_static\conda-tut-1.png" alt="Command line image of first SSH intro Frontera">
+
+<p>SSHing into Frontera takes you to the $HOME directory by default. Try running the <b>pwd (Print Working Directory)</b> command to see where you are: </p>
+<img src="\READTHEDOCS_OUTPUT\_static\conda-tut-2.png" alt="pwd">
+
+<p>As you can see, we are on home. We need to get into Work. <b>cd (change directory)</b> all the way back to the main directory of the system, so we can choose to install Conda on the <b>$WORK</b> directory. Here the working directory is also printed out to the screen with pwd to visualize going back in our directories:</p>
+<img src="\READTHEDOCS_OUTPUT\_static\conda-tut-3.png">
+
+<p>Let's see where our $WORK directory is. Use <b>ls -a (list all):</b></p>
+<img src="\READTHEDOCS_OUTPUT\_static\conda-tut-4.png">
+<p>Notice how we have the <b>disk options that were presented to us when we first logged onto Frontera available for us to cd into (home1, work2, and scratch1, scratch2, and scratch3).</b></p>
+<p>These are the $HOME, $WORK, and $SCRATCH directories available for you specifically–and they may differ depending on the user.</p>
+
+<p>Let's cd into <b>our specific work directory</b> with the following command: </p>
+  <div><div class="highlight-default notranslate"><div class="highlight"><pre><span>cd/work/#####/&lt;username&gt;</span><span class="n"></span></pre></div></div>
+
+<p>Where the numbers are your group, and the username is your TACC username.</p>
+
+<p>When you get to your directory, you’ll see that you have multiple partitions available to you depending on the system you’re using:</p>
+<img src="\READTHEDOCS_OUTPUT\_static\conda-tut-6.png">
+
+<p>This is a unique quality of the <b>$WORK</b> directories. Because they’re mounted in Stockyard and shared across all systems, you can access files from other systems with ease. We are on frontera, and we’ll be installing conda in the frontera work directory, so go ahead and cd into frontera with:
+</p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">frontera</span></pre></div></div>
+<p>When you run <b>pwd</b>, your working directory should now be:</p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">/work/#####/&lt;username&gt;/frontera</span></pre></div></div>
+
+<p>Now that we’re in the work directory for frontera, we can install Conda. Use <b>curl</b> (a command-line tool to transfer data from a server via HTTP) to download Miniforge, which will come with conda.</p>
+<p>Run the following command in your terminal:</p>
+<p>(You may also use <b>wget</b> if you prefer).</p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl -LO https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh</span></pre></div></div>
+<p><i>*This download pulls it directly from the github link for the Linux architecture, which is what our systems use. If you follow this tutorial to install it on a local machine, you will need to change the URL to the installation file containing Miniforge for your system, which can be found in the same repo.</i></p>
+
+<p>Now make the execution script executable with <b>chmod</b>, which modifies file permissions so that we can execute <b>(+x)</b> the file:</p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span>chmod +x Miniforge3-Linux-x86_64.sh</span><span class="n"></span></pre></div></div>
+
+<p>Now we can run the Miniforge installer:</p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span>bash Miniforge3-Linux-x86_64.sh</span><span class="n"></span></pre></div></div>
+
+<div class="admonition note">
+  <p class="admonition-title">Note</p>
+  <p>When you run the bash script, you will have some disclaimers pop up on your command line during the installation process. This disclaimer will walk you through the installation steps for Miniforge, but it will present to you a default installation folder that is in the $HOME directory:</p>
 </div>
-<ul class="simple">
-<li><p>Windows: Double-click the .exe file and follow the on screen instructions</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</dd>
+
+<img src="\READTHEDOCS_OUTPUT\_static\conda-tut-7.png" alt="Command Line Disclaimers"
+
+<p><b>Make sure you change this to your work/frontera directory before you install it!:</b></p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span>/work/#####/<username>/frontera/miniforge3</span><span class="n"></span></pre></div></div>
+
+<p>After running the bash script, it will ask you to <b>update your shell profile to automatically initialize conda.</b> Type <b>‘yes’.</b></p>
+
 <dt><strong>Step 6. Initialize Conda</strong></dt><dd><p>After installation, initialize Conda to configure your shell:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">init</span>
